@@ -3,7 +3,11 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'HI JUSTIN!' });
+  res.sendfile('./public/index.html');
+});
+
+router.get('/results', function(req, res, next) {
+    res.sendfile('./public/results.html');
 });
 
 /* GET Hello World page. */
