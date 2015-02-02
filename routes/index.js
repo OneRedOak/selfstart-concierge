@@ -11,6 +11,11 @@ router.get('/results', function(req, res, next) {
 });
 
 /* GET Hello World page. */
+router.get('/index', function(req, res) {
+    res.render('index', { title: 'Welcome to the form!' })
+});
+
+/* GET Hello World page. */
 router.get('/form', function(req, res) {
     res.render('form', { title: 'Welcome to the form!' })
 });
