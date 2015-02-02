@@ -9,4 +9,16 @@ router.get('/userlist', function(req, res) {
     });
 });
 
+/*
+ * POST to adduser.
+ */
+router.post('/adduser', function(req, res) {
+    var db = req.db;
+    db.collection('selfstart1').insert(req.body, function(err, result){
+        res.send(
+            (err === null) ? { msg: '' } : { msg: err }
+        );
+    });
+});
+
 module.exports = router;
