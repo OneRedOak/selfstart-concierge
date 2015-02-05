@@ -15,9 +15,18 @@
 
     window.onload = function(){
     	setTimeout(function(){
-			$("#changing").typed({
-				strings: ["build a website", "learn node.js", "build an iOS app", "learn a new skill",""],
-				typeSpeed: 60
+			$("#b").slideDown(300, function(){
+				setTimeout(function(){
+					$("#c").slideDown(300, function(){
+						setTimeout(function(){
+							$("#d").slideDown(300, function(){
+								setTimeout(function(){
+									$("#e").slideDown(300);
+								}, 1600);
+							});
+						}, 1300);
+					});
+				}, 1000);
 			});
     	}, 800);
 
