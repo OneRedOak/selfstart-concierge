@@ -176,8 +176,19 @@ textarea:focus{
 	font-weight: 200;
 }
 
+#transition {
+    text-align: center;
+}
+
 #transition img {
-	width: 100%;
+	width: 70%;
+}
+
+#triangle-down {
+    width: 0;
+    height: 0;
+    border-top: 100px solid #3498DB;
+    margin: auto;
 }
 
 .topdescribe, .topdescribe2, .learnmore {
