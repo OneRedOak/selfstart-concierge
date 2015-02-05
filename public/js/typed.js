@@ -27,6 +27,7 @@
 
     "use strict";
 
+    // Added callback functionality
     var Typed = function(el, options) {
 
         // chosen element to manipulate text

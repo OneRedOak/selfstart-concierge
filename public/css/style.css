@@ -26,8 +26,7 @@ h2 {
 
 .actionButton {
 	padding: 20px;
-/*	border: 1px white solid;
-*/	color: white;
+    color: white;
 	border-radius: 5px;
 	margin: auto;
 	font-size: 24pt;

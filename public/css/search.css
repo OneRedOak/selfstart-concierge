@@ -1,0 +1,170 @@
+body {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	font-weight: 200;
+	font-family: 'Helvetica Neue';
+	text-align: center;
+	height: 100%;
+    color: white;
+}
+
+body, h1, h2 {
+	font-weight: 200;
+}
+
+h2 {
+	margin: 0px;
+}
+
+.blueText {
+	color: white;
+}
+
+#changing {
+	border-bottom: solid 1px white;
+}
+
+#coreWant {
+    background-color: transparent;
+    border: none;
+    resize: none;
+    font-size: 38pt;
+    font-weight: 100;
+    text-align: center;
+    overflow: hidden;
+}
+
+#coreWant:focus {
+    outline: none;
+    box-shadow: none;
+    border-bottom: solid white 1px;
+}
+
+.col3 {
+    float: left;
+    width: 30%;
+    margin-right: 3.3%;
+    text-align: center;
+}
+
+#options {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 45px;
+    clear: both;
+    display: none;
+    background-color: #3498db;
+    overflow: hidden;
+    width: 70%;
+    padding-top: 20px;
+    padding-bottom: 24px;
+    color: white;
+    border-radius: 6px;
+}
+
+#options i {
+    margin-right: 10px;
+}
+
+#options p {
+    font-size: 13pt;
+    font-weight: 200;
+}
+
+#options p:hover {
+    color: #3498db;
+    cursor: pointer;
+}
+
+#options h4 {
+    font-weight: 200;
+}
+
+input[type="range"] {
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.rotatingTop {
+    margin-bottom: 12%;
+}
+
+#search {
+    margin-top: 20px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 4px;
+    border: #3498db solid 2px;
+    background-color: transparent;
+    color: #3498db;
+    font-weight: 200;
+}
+
+#search:hover {
+    background-color: #2980b9;
+    border: #2980b9 solid 2px;
+    color: white;
+}
+
+#search:focus {
+    outline: none;
+}
+
+#tagline {
+    clear: both;
+}
+
+#tagline p {
+    padding: 0px;
+    margin: 0px;
+    font-size: 20pt;
+    font-weight: 200;
+}
+
+#typeWriter span {
+	font-size: 38pt;
+	font-weight: 100;
+}
+
+#topSection {
+	padding-top: 13%;
+	height: 100%;
+	background: url('../img/bgtop2.jpg') no-repeat center top;
+	background-size: cover;
+}
+
+.topdescribe, .topdescribe2, .learnmore, #input {
+	display: none;
+}
+
+.topdescribe {
+    padding-top: 200px;
+}
+
+
+/*  Typed.js  */
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
