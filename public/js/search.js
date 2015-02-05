@@ -21,29 +21,12 @@
 			var key = e.which;
 			if(key == 13)  // the enter key code
 			{
-		    	showOptions();
 		    	return false;	
 			}
 		});
 
 		$('#typeWriter').click(function(){
 			showKeyInput();
-		});
-
-		$('#bgk').change(function(){
-			var bgkValue = $('#bgk').val();
-			$('#bgkValue').html(bgkValue);
-		});
-
-		var bgkValue = $('#bgk').val();
-		$('#bgkValue').html(bgkValue);
-
-		$('#search').click(function(){
-			if(showingOptions){
-				// execute search
-			} else {
-				showOptions();
-			}
 		});
     }
 
@@ -69,17 +52,10 @@
     	}, 800);
 	}
 
-	function showOptions(){
-		$("#topSection").css("background", "white");
-		$('body').css('color', 'black');
-		$('.blueText').css('color', '#3498db');
-		$('#changing').css('borderBottom', 'solid black 1px');
-		$('#options').slideDown(800);
-	}
-
 	function showKeyInput(){
 		$("#typeWriter").fadeOut(500, function(){
 			$("#input").fadeIn(500);
+			$('#options').slideDown(500);
 		});
 	}
 

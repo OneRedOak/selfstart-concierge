@@ -54,7 +54,7 @@ h2 {
     margin-top: 45px;
     clear: both;
     display: none;
-    background-color: #3498db;
+    background:rgba(52,152,219,0.6);
     overflow: hidden;
     width: 70%;
     padding-top: 20px;
@@ -97,9 +97,9 @@ input[type="range"] {
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 4px;
-    border: #3498db solid 2px;
-    background-color: transparent;
-    color: #3498db;
+    border: #2980b9 solid 2px;
+    background-color: rgba(52,152,219,0.7);
+    color: white;
     font-weight: 200;
 }
 
