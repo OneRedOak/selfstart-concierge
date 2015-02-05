@@ -15,14 +15,31 @@
 
     window.onload = function(){
     	setTimeout(function(){
-			$("#changing").typed({
-				strings: ["build a website", "learn node.js", "build an iOS app", "learn a new skill",""],
-				typeSpeed: 60
+			$("#b").slideDown(300, function(){
+				setTimeout(function(){
+					$("#c").slideDown(300, function(){
+						setTimeout(function(){
+							$("#d").slideDown(300, function(){
+								setTimeout(function(){
+									$("#e").slideDown(300, function(){
+										setTimeout(function(){
+											$("#continue").slideDown(400);
+										}, 500);
+									});
+								}, 1600);
+							});
+						}, 1300);
+					});
+				}, 1000);
 			});
     	}, 800);
 
 
     	setChevron();
+
+    	$('#actionButton').click(function(){
+    		$('#start').ScrollTo();
+    	});
 
 
     	$('.learnmore').click(function(){
@@ -70,7 +87,7 @@
 	}
 
 	function setChevron(){
-		var width = window.innerWidth / 3;
+		var width = window.innerWidth / 4;
 		var border = width + "px solid transparent";
 		$('#triangle-down').css('border-left', border);
 		$('#triangle-down').css('border-right', border);

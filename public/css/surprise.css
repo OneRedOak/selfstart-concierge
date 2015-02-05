@@ -16,6 +16,11 @@ h2 {
 	margin: 0px;
 }
 
+#b, #c, #d, #e {
+    display: block;
+    display: none;
+}
+
 #attributeList {
 	font-size: 14pt;
 }
@@ -24,14 +29,17 @@ h2 {
 	margin-top: 20px;
 }
 
-.actionButton {
+#actionButton {
 	padding: 20px;
-    color: white;
 	border-radius: 5px;
 	margin: auto;
 	font-size: 24pt;
 	font-weight: 100;
-	letter-spacing: 15px;
+	letter-spacing: 5px;
+}
+
+#actionButton:hover {
+    cursor: pointer;
 }
 
 .blueText {
@@ -47,6 +55,10 @@ h2 {
     text-align: left;
     color: #bdc3c7;
     margin-top: 20px;
+}
+
+#continue {
+    display: none;
 }
 
 .grayText {
@@ -101,10 +113,19 @@ h2 {
 	box-shadow: 0px 0px 22px 0px rgba(50, 50, 50, 0.4);
 }
 
+#magicBubble {
+    font-size: 18pt;
+
+}
+
 .miniSeperator {
 	border-bottom: 2px white solid;
 	width: 200px;
 	height: 5px;
+}
+
+.under {
+    text-decoration: underline;
 }
 
 #rotatingTop {
@@ -129,9 +150,13 @@ h2 {
 }
 
 #start {
-	padding-top: 80px;
 	background-color: #3498DB;
 	z-index: -100;
+    color: white;
+}
+
+#start span {
+    font-size: 13pt;
 }
 
 .submit {
@@ -157,24 +182,24 @@ h2 {
 	color: gray;
 }
 
-#tagline {
-	width: 100%;
-	padding-top: 150px;
-	padding-bottom: 150px;
-	font-size: 22pt;
-	/*background: url('../img/sky.jpeg') no-repeat;
-	background-size: cover;*/
-	background-color: #3498db;
-	background-position: fixed;
-	background-attachment: fixed;
-	text-align: center;
-	font-weight: 100;
-	color: white;
-}
-
 #survey textarea {
 	height: 140px;
 	margin-bottom: 30px;	
+}
+
+#tagline {
+    width: 100%;
+    padding-top: 11%;
+    padding-bottom: 9%;
+    font-size: 22pt;
+/*  background: url('../img/blurred_screenshot.png') no-repeat;
+*/  background-size: cover;
+    background-color: #3498db;
+    background-position: fixed;
+    background-attachment: fixed;
+    text-align: center;
+    font-weight: 100;
+    color: white;
 }
 
 textarea {
@@ -191,7 +216,7 @@ textarea:focus{
 }
 
 #timelineSection {
-	background-color: white;
+	background-color: #ecf0f1;
 	background-size: cover;
 	padding-top: 70px;
 	box-shadow:         0px 0px 22px 0px rgba(50, 50, 50, 0.6);
@@ -205,7 +230,7 @@ textarea:focus{
 #topSection {
 	padding-top: 13%;
 	height: 100%;
-	background: url('../img/bgtop2.jpg') no-repeat;
+	background: url('../img/blurred_screenshot.png') no-repeat;
 	background-size: cover;
 }
 
@@ -218,10 +243,6 @@ textarea:focus{
 
 #transition {
     text-align: center;
-}
-
-#transition img {
-	width: 70%;
 }
 
 #triangle-down {
@@ -288,7 +309,7 @@ textarea:focus{
         position: absolute;
         content: " ";
         width: 3px;
-        background-color: #eeeeee;
+        background-color: white;
         left: 50%;
         margin-left: -1.5px;
     }
