@@ -5,8 +5,14 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var mongo = require('mongoskin');
-var db = mongo.db('mongodb://localhost:27017/selfstart1', {native_parser:true});
+/* MongoDB Connection */
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/selfstart1');
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+    console.log('Mongoose connected to MongoDB')
+})
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -26,6 +32,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+/* Middleware for Cross Origin Resource Sharing */
+app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+
+    next();
+})
+
 // Make db accessible to our router
 app.use(function(req,res,next){
     req.db = db;
@@ -34,7 +49,7 @@ app.use(function(req,res,next){
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('form', forms);
+app.use('/form', forms);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
