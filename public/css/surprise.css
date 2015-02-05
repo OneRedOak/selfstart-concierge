@@ -104,13 +104,11 @@ h2 {
 }
 
 #nav {
-	width: 100%;
-	height: 70px;
-	line-height: 70px;
-	vertical-align: middle;
-	background-color: white;
 	z-index: 1500;
-	box-shadow: 0px 0px 22px 0px rgba(50, 50, 50, 0.4);
+}
+
+.navbar-default {
+    background-color: white;
 }
 
 #magicBubble {
@@ -183,7 +181,7 @@ h2 {
 }
 
 #survey textarea {
-	height: 140px;
+	height: 100px;
 	margin-bottom: 30px;	
 }
 
