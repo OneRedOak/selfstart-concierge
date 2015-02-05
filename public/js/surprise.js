@@ -21,7 +21,11 @@
 						setTimeout(function(){
 							$("#d").slideDown(300, function(){
 								setTimeout(function(){
-									$("#e").slideDown(300);
+									$("#e").slideDown(300, function(){
+										setTimeout(function(){
+											$("#continue").slideDown(400);
+										}, 500);
+									});
 								}, 1600);
 							});
 						}, 1300);
@@ -32,6 +36,10 @@
 
 
     	setChevron();
+
+    	$('#actionButton').click(function(){
+    		$('#start').ScrollTo();
+    	});
 
 
     	$('.learnmore').click(function(){
@@ -79,7 +87,7 @@
 	}
 
 	function setChevron(){
-		var width = window.innerWidth / 3;
+		var width = window.innerWidth / 4;
 		var border = width + "px solid transparent";
 		$('#triangle-down').css('border-left', border);
 		$('#triangle-down').css('border-right', border);
