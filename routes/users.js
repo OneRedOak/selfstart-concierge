@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var SearchForm = require('../models/SearchForm')
+var SearchForm = require('../models/searchForm');
 
 /* GET userlist. */
 router.get('/userlist', function(req, res) {

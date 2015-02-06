@@ -1,7 +1,7 @@
 var express = require('express');
 var jwt = require('../services/jwt.js');
 var router = express.Router();
-var User = require('../models/User');
+var User = require('../models/user');
 
 /* Test Post from User Sign Up Form */
 router.post('/register', function(req, res) {
