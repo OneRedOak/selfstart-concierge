@@ -74,6 +74,15 @@
 				the_post.css("cursor","pointer");
 			}
 		}
+
+		$("#submitSurvey").click(function(){
+			blur();
+		});
+
+		$('#closeModal').click(function(){
+			$('#survey').css("-webkit-filter", "none");
+		});
+
 	}
 
 	function typeWriter(text, n) {
@@ -91,6 +100,10 @@
 		var border = width + "px solid transparent";
 		$('#triangle-down').css('border-left', border);
 		$('#triangle-down').css('border-right', border);
+	}
+
+	function blur(){
+		$('#survey').css("-webkit-filter", "blur(7px)");
 	}
 
 })();

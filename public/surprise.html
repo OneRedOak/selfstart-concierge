@@ -92,31 +92,28 @@
 					<h4>Are you willing to spend money to learn this? If so, what's your budget?</h4>
 					<textarea></textarea>
 				</div>
+			</div>
+			<div class="row">
+				<div class="info">Name <input type="text"> Email <input type="text"></div>
 			</div>			
-			<div class="submit">Submit</div>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+			<div class="submit" data-toggle="modal" data-backdrop="static" data-target="#blurModal" id="submitSurvey">Submit</div>
+		</div>
+		<div class="modal fade" id="blurModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button id="closeModal" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title grayText" id="myModalLabel">Request submitted</h4>
+		      </div>
+		      <div class="modal-body">
+		      	<h2>First step to accomplishing you goal: <i class="fa fa-check-square-o"></i></h2>
+		      	<p>You must <span class="confirmEmail">confirm your email address</span> in order for us to notify you when your results are ready. Expect results within <span class="confirmEmail">24 hours of your submission</span>.<br><br>We can't wait to hear your thoughts on our recommendations!</p>
+		      </div>
+		      <div class="modal-footer">
+		      	<span class="grayText">&copy; SelfStart 2015</span>
+		      </div>
+		    </div>
+		  </div>
 		</div>
 		<div id="timelineSection">
 			<div class="container">
