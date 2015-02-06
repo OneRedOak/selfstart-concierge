@@ -19,6 +19,7 @@ h2 {
 #b, #c, #d, #e {
     display: block;
     display: none;
+/*    -webkit-filter: blur(8px);*/
 }
 
 #attributeList {
@@ -46,6 +47,12 @@ h2 {
 	color: white;
 }
 
+#blurModal p {
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 #changing {
 	border-bottom: solid 1px white;
 	color: #4A90E2;
@@ -61,8 +68,13 @@ h2 {
     display: none;
 }
 
+.confirmEmail {
+    color: red;
+    font-weight: 400;
+}
+
 .grayText {
-	color: white;
+	color: lightgray;
 }
 
 #footer {
@@ -104,7 +116,7 @@ h2 {
 }
 
 #nav {
-	z-index: 1500;
+	z-index: 100;
 }
 
 .navbar-default {
@@ -113,13 +125,26 @@ h2 {
 
 #magicBubble {
     font-size: 18pt;
-
 }
 
 .miniSeperator {
 	border-bottom: 2px white solid;
 	width: 200px;
 	height: 5px;
+}
+
+.modal-dialog {
+    margin-top: 20%;
+}
+
+.modal-footer {
+    text-align: left;
+}
+
+.info {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
 }
 
 .under {
@@ -157,13 +182,19 @@ h2 {
     font-size: 13pt;
 }
 
-.submit {
-	background-color: #2ecc71;
-	padding: 20px;
-	color: white;
-	text-align: center;
-	border-radius: 10px;
-	font-size: 15pt;
+#submitSurvey {
+    margin-top: 20px;
+    background-color: #2ecc71;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 15pt;
+}
+
+#submitSurvey:hover {
+    cursor: pointer;
+    background-color: #27ae60;
 }
 
 #survey {
