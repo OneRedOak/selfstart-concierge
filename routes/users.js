@@ -6,8 +6,8 @@ var SearchForm = require('../models/searchForm')
 router.get('/userlist', function(req, res) {
     var db = req.db;
 
-    SearchForm.find().toArray(function (err, items) {
-        res.json(items);
+    SearchForm.find({}, function(err, data) {
+       res.send(JSON.parse(JSON.stringify(data)));
     });
 
     /*
@@ -24,16 +24,22 @@ router.post('/adduser', function(req, res) {
     var db = req.db;
 
     var formEntry = new SearchForm({
-        'fullname': res.fullname,
-        'email': res.email,
-        'qlearn': res.qlearn,
-        'qwhy': res.qwhy,
-        'qbackground': res.qbackground,
-        'qformat': res.qformat,
-        'qbudget': res.qbudget,
-        'qdate': res.qdate,
-        'completed': res.completed
+        fullname: 'Test Test',
+        email: 'dabest@u.com'
     });
+
+    /*
+     'fullname': res.fullname,
+     'email': res.email,
+     'qlearn': res.qlearn,
+     'qwhy': res.qwhy,
+     'qbackground': res.qbackground,
+     'qformat': res.qformat,
+     'qbudget': res.qbudget,
+     'qdate': res.qdate,
+     'completed': res.completed
+     */
+
     formEntry.save(function(err) {
         res.send(
             (err === null) ? { msg: '' } : { msg: err }
