@@ -456,7 +456,6 @@ textarea:focus, input:focus{
             border-top-left-radius: 50%;
             border-bottom-right-radius: 50%;
             border-bottom-left-radius: 50%;
-            padding-top: 16px;
         }
 
         .timeline > li.timeline-inverted > .timeline-panel {
