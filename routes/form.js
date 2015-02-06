@@ -5,13 +5,20 @@ var User = require('../models/user');
 
 /* Test Post from User Sign Up Form */
 router.post('/register', function(req, res) {
+    // console.log("Reached form/register Router");
     var user = req.body;
+    console.log(reg.body);
 
     var newUser = new User({
-        firstname: user.firstname,
-        lastname: user.lastname,
+        fullname: user.fullname,
         email: user.email,
-        password: user.password
+        password: "selfstart",
+        qlearn: user.qlearn,
+        qwhy: user.qwhy,
+        qbackground: user.qbackground,
+        qformat: user.qformat,
+        qbudget: user.qbudget,
+        qdate: new Date().getTime()
     });
 
     var payload = {

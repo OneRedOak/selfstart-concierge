@@ -4,10 +4,15 @@ var Schema = mongoose.Schema;
 
 /* Schema for User Objects in DB */
 var UserSchema = new Schema({
-    'firstname': String,
-    'lastname': String,
+    'fullname': String,
     'email': String,
-    'password': String
+    'password': String,
+    qlearn: String,
+    qwhy: String,
+    qbackground: String,
+    qformat: String,
+    qbudget: String,
+    qdate: String
 });
 
 UserSchema.methods.toJSON = function() {

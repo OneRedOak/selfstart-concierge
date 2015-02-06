@@ -73,6 +73,7 @@
 
 		$("#submitSurvey").click(function(){
 			blur();
+            submitFormPost(); // POSTs form to backend route
 		});
 
 		$('#closeModal').click(function(){
@@ -107,5 +108,52 @@
 		$('#survey').css("-webkit-filter", "none");
 		$('#timelineSection').css("-webkit-filter", "none");
 	}
+
+    /* Function for Receiving & Handling JWT Token (for User Authentication) */
+
+    function authTokenHandler($window) {
+        var storage = $window.localStorage;
+        var cachedToken;
+        return {
+            setToken: function(token) {
+                cachedToken = token;
+                storage.setItem('userToken', token);
+            },
+            getToken: function() {
+                if(!cachedToken) {
+                    cachedToken = storage.getItem('userToken');
+                }
+                return cachedToken;
+            },
+            isAuthenticated: function() {
+                return !!this.getToken();
+            }
+        }
+    }
+
+    /* Submission Form JS Wiring to POST to BackEnd */
+
+    function submitFormPost() {
+        var url = 'localhost:3000/form/register';
+        var user = {
+            fullname: $("#surveyFullName").val(),
+            email: $("#surveyEmail").val(),
+            qlearn: $("#surveyQlearn").val(),
+            qwhy: $("#surveyQwhy").val(),
+            qbackground: $("#surveyQbackground").val(),
+            qformat: $("#surveyQformat").val(),
+            qbudget: $("#surveyQbudget").val(),
+            qdate: new Date().getTime()
+        };
+
+        $.post(url, user)
+            .done(function() {
+                alert('Successful register!');
+                authTokenHandler.setToken(res.token);
+            })
+            .fail(function() {
+                alert('Opps! Something went wrong registering.', 'Please try again.');
+            });
+    }
 
 })();
