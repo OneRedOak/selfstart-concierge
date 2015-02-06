@@ -7,7 +7,7 @@ var User = require('../models/user');
 router.post('/register', function(req, res) {
     // console.log("Reached form/register Router");
     var user = req.body;
-    console.log(reg.body);
+    console.log(user.email);
 
     var newUser = new User({
         fullname: user.fullname,

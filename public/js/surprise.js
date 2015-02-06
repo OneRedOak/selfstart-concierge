@@ -111,8 +111,8 @@
 
     /* Function for Receiving & Handling JWT Token (for User Authentication) */
 
-    function authTokenHandler($window) {
-        var storage = $window.localStorage;
+    var authTokenHandler = function() {
+        var storage = window.localStorage;
         var cachedToken;
         return {
             setToken: function(token) {
@@ -133,8 +133,8 @@
 
     /* Submission Form JS Wiring to POST to BackEnd */
 
-    function submitFormPost() {
-        var url = 'localhost:3000/form/register';
+    var submitFormPost = function() {
+        var url = 'http://localhost:3000/form/register';
         var user = {
             fullname: $("#surveyFullName").val(),
             email: $("#surveyEmail").val(),
@@ -147,9 +147,9 @@
         };
 
         $.post(url, user)
-            .done(function() {
+            .done(function(res) {
                 alert('Successful register!');
-                authTokenHandler.setToken(res.token);
+                authTokenHandler().setToken(res.token);
             })
             .fail(function() {
                 alert('Opps! Something went wrong registering.', 'Please try again.');
