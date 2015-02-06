@@ -1,12 +1,14 @@
 var express = require('express');
 var router = express.Router();
-var bodyParser = require('body-parser');
+var User = require('../models/User');
 
 /* Test Post from User Sign Up Form */
 router.post('/register', function(req, res) {
     var user = req.body;
 
     var newUser = new User({
+        firstname: user.firstname,
+        lastname: user.lastname,
         email: user.email,
         password: user.password
     });
