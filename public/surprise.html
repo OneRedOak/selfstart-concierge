@@ -152,38 +152,38 @@
 
     <div id="survey">
         <h4>What do you want to take away and learn from this?</h4>
-        <textarea></textarea>
+        <textarea id="surveyQlearn" name="qlearn"></textarea>
         <div class="row">
             <div class="col-md-6">
                 <h4>Why are you doing this?</h4>
-                <textarea></textarea>
+                <textarea id="surveyQwhy" name="qwhy"></textarea>
             </div>
             <div class="col-md-6">
                 <h4>What is your background knowledge / experience on this?</h4>
-                <textarea></textarea>
+                <textarea id="surveyQbackground" name="qbackground"></textarea>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <h4>Do you have a preffered format of learning?</h4>
-                <textarea></textarea>
+                <textarea id="surveyQformat" name="qformat"></textarea>
             </div>
             <div class="col-md-6">
                 <h4>Are you willing to spend money to learn this? If so, what's your budget?</h4>
-                <textarea></textarea>
+                <textarea id="surveyQbudget" name="qbudget"></textarea>
             </div>
         </div>
         <div class="row">
             <div class="info">
                 <div class="col-md-6 rightAlign">
-                    <input type="text" placeholder="My name is">
+                    <input id="surveyFullName" type="text" name="fullname" placeholder="My name is...">
                 </div>
                 <div class="col-md-6 leftAlign">
-                    <input type="text" placeholder="Email me at">
+                    <input id="surveyEmail" type="text" name="email" placeholder="Email me at...">
                 </div>
             </div>
         </div>
-        <div class="submit" data-toggle="modal" data-backdrop="static" data-target="#blurModal" id="submitSurvey">Submit</div>
+        <button class="submit" type="submit" data-toggle="modal" data-backdrop="static" data-target="#blurModal" id="submitSurvey">Submit</button>
     </div>
 
     <div id="footer">
