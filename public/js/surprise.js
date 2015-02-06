@@ -21,7 +21,7 @@
 						setTimeout(function(){
 							$("#d").slideDown(300, function(){
 								setTimeout(function(){
-									$("#e").slideDown(300s);
+									$("#e").slideDown(300);
 								}, 1600);
 							});
 						}, 1300);
