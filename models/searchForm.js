@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var searchFormSchema = new Schema({
+/* Schema for Search Form Objects in DB */
+var SearchFormSchema = new Schema({
     'fullname': String,
     'email': String,
     'qlearn': String,
@@ -13,4 +14,4 @@ var searchFormSchema = new Schema({
     'completed': String
 });
 
-module.exports = mongoose.model('SearchForm', searchFormSchema);
+module.exports = mongoose.model('SearchForm', SearchFormSchema);
