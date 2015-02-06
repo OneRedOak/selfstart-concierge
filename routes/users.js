@@ -9,12 +9,6 @@ router.get('/userlist', function(req, res) {
     SearchForm.find({}, function(err, data) {
        res.send(JSON.parse(JSON.stringify(data)));
     });
-
-    /*
-    db.collection('selfstart1').find().toArray(function (err, items) {
-        res.json(items);
-    });
-    */
 });
 
 /*
@@ -44,15 +38,7 @@ router.post('/adduser', function(req, res) {
         res.send(
             (err === null) ? { msg: '' } : { msg: err }
         );
-    })
-
-    /*
-    db.collection('selfstart1').insert(req.body, function(err, result){
-        res.send(
-            (err === null) ? { msg: '' } : { msg: err }
-        );
     });
-    */
 });
 
 module.exports = router;
