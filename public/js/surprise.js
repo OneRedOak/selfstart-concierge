@@ -21,11 +21,7 @@
 						setTimeout(function(){
 							$("#d").slideDown(300, function(){
 								setTimeout(function(){
-									$("#e").slideDown(300, function(){
-										setTimeout(function(){
-											$("#continue").slideDown(400);
-										}, 500);
-									});
+									$("#e").slideDown(300s);
 								}, 1600);
 							});
 						}, 1300);

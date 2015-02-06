@@ -64,10 +64,6 @@ h2 {
     margin-top: 20px;
 }
 
-#continue {
-    display: none;
-}
-
 .confirmEmail {
     color: red;
     font-weight: 400;
@@ -113,6 +109,10 @@ h2 {
 #footerLinks a {
     display: block;
     margin-top: 15px;
+}
+
+#footer img {
+    margin-top: 50px;
 }
 
 .leftAlign {
@@ -190,6 +190,8 @@ h2 {
 	background-color: #3498DB;
 	z-index: -100;
     color: white;
+    padding-top: 60px;
+    padding-bottom: 20px;
 }
 
 #start span {
