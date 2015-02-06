@@ -80,7 +80,7 @@
 		});
 
 		$('#closeModal').click(function(){
-			$('#survey').css("-webkit-filter", "none");
+			unblur();
 		});
 
 	}
@@ -104,6 +104,12 @@
 
 	function blur(){
 		$('#survey').css("-webkit-filter", "blur(7px)");
+		$('#timelineSection').css("-webkit-filter", "blur(7px)");
+	}
+
+	function unblur(){
+		$('#survey').css("-webkit-filter", "none");
+		$('#timelineSection').css("-webkit-filter", "none");
 	}
 
 })();

@@ -47,8 +47,8 @@
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="nav navbar-nav navbar-right">
 			        <li><a id="howTo">How this works</a></li>
-			        <li><a id="aboutUs">About Us</a></li>
 			        <li><a id="getPresent">Get <i class="fa fa-gift fa-lg"></i></a></li>
+			        <li><a id="aboutUs">About Us</a></li>
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
@@ -94,7 +94,14 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="info">Name <input type="text"> Email <input type="text"></div>
+				<div class="info">
+					<div class="col-md-6 rightAlign">
+						<input type="text" placeholder="My name is">
+					</div>
+					<div class="col-md-6 leftAlign">
+						<input type="text" placeholder="Email me at">
+					</div>
+				</div>
 			</div>			
 			<div class="submit" data-toggle="modal" data-backdrop="static" data-target="#blurModal" id="submitSurvey">Submit</div>
 		</div>
