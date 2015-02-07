@@ -5,6 +5,16 @@
     	height = window.innerHeight - window.innerHeight/5;
     	$('#introVideo').attr('width', width);
     	$('#introVideo').attr('height', height);
+        setTimeout(function(){
+            $("#heading").animate({
+                height: "150px",
+                lineHeight: "150px"
+            }, 500, function(){
+
+            });
+            $("#nav").slideDown(500);
+            $("#introVideo").fadeIn(500);
+        },800);
     }
 
     window.addEventListener('scroll', check);

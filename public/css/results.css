@@ -18,7 +18,7 @@ body {
 }
 
 #buffer {
-	height: 45%;
+	height: 200px;
 }
 
 .container {
@@ -80,7 +80,10 @@ body {
 }
 
 #heading {
-	height: 8%;
+	height: 500px;
+	line-height: 500px;
+	font-size: 22pt;
+	color: white;
 }
 
 .info {
@@ -93,6 +96,18 @@ body {
 
 #intro {
 	font-size: 15pt;
+}
+
+#introVideo {
+	display: none;
+}
+
+#nav {
+	display: none;
+}
+
+.navbar {
+	margin-bottom: 0px;
 }
 
 .name:hover {
@@ -125,8 +140,7 @@ body {
 }
 
 #top {
-	height: 93%;
-	background-color: #17928D;
+	background-color: #2ecc71;
 	text-align: center;
 	box-shadow:         0px 0px 30px 9px rgba(50, 50, 50, 0.23);
 }
