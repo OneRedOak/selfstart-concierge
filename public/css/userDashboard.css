@@ -157,6 +157,7 @@ input {
     text-allign: center;
 }
 
+/* Defaults authorization dependent elements to hide until "shown" by JS */
 .hiddenAtStart {
     display: none;
 }
