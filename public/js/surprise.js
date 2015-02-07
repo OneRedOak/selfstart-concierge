@@ -122,6 +122,7 @@
         var user = {
             fullname: $("#surveyFullName").val(),
             email: $("#surveyEmail").val(),
+            query: $("#surveyQuery").val(),
             qlearn: $("#surveyQlearn").val(),
             qwhy: $("#surveyQwhy").val(),
             qbackground: $("#surveyQbackground").val(),

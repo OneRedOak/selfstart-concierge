@@ -26,4 +26,4 @@ var authTokenHandler = function() {
     };
 
     return authToken;
-}
+};

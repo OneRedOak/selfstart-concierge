@@ -29,7 +29,22 @@
             $('#sidebarRequests').show();
             $('#sidebarCreate').show();
             $('#sidebarSignout').show();
+
+            /* Hide */
+            var prevSearches = getPrevUserSearches();
+
+            alert(prevSearches);
         }
-    }
+    };
+
+    var getPrevUserSearches = function() {
+        $.get('http://localhost:3000/form/searches', function(data) {
+            console.log(data);
+        }).done(function() {
+            alert('Success');
+        }).fail(function() {
+            alert('Failed');
+        });
+    };
 
 })();

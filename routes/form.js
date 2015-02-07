@@ -13,6 +13,7 @@ router.post('/register', function(req, res) {
         fullname: user.fullname,
         email: user.email,
         password: "selfstart",
+        query: user.query,
         qlearn: user.qlearn,
         qwhy: user.qwhy,
         qbackground: user.qbackground,
@@ -34,6 +35,19 @@ router.post('/register', function(req, res) {
             token: token
         });
     });
+});
+
+/* Returns previous searches made by user */
+router.get('/searches', function(req, res) {
+
+    if(!req.headers.authorization) {
+        return res.status(401).send({
+            message: 'You are not authorized'
+        });
+    }
+
+    res.json({test:'it is a test'});
+
 });
 
 module.exports = router;
