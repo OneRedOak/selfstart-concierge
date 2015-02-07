@@ -2,7 +2,6 @@
 <head>
     <title>Dashboard</title>
     <link rel="shortcut icon" href="img/favicon.ico">
-
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/userDashboard.css">
@@ -33,36 +32,53 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="sideSection" id="back">
             <i class="fa fa-arrow-circle-left"></i> Back to homepage
         </div>
+        <div class="sideSection" id="signout">
+            <p><i class="fa fa fa-sign-out"></i> Sign out
+        </div>
         <div id="copyright">
             &copy; SelfStart 2015
         </div>
     </div>
     <div id="content">
-        <div class="request">
-            <div class="title">
-                <h1>I want to create an iOS app</h1>
+        <div id="requestsList">
+            <div class="request">
+                <div class="title">
+                    <h1>I want to create an iOS app</h1>
+                </div>
+                <div class="attr">
+                    <div class="status">Status : <span id="currentStatus">Ready</span></div>
+                    <div class="viewButton ready">VIEW</div>
+                </div>
             </div>
-            <div class="attr">
-                <div class="status">Status : <span id="currentStatus">Ready</span></div>
-                <div class="viewButton ready">VIEW</div>
+            <div class="request">
+                <div class="title">
+                    <h1>learn ruby on rails</h1>
+                </div>
+                <div class="attr">
+                    <div class="status">Status : <span id="currentStatus">Pending</span></div>
+                    <div class="viewButton pending">VIEW</div>
+                </div>
+            </div>
+            <div class="request">
+                <div class="title">
+                    <h1>understand what node.js really is</h1>
+                </div>
+                <div class="attr">
+                    <div class="status">Status : <span id="currentStatus">Pending</span></div>
+                    <div class="viewButton pending">VIEW</div>
+                </div>
             </div>
         </div>
-        <div class="request">
-            <div class="title">
-                <h1>learn ruby on rails</h1>
-            </div>
-            <div class="attr">
-                <div class="status">Status : <span id="currentStatus">Pending</span></div>
-                <div class="viewButton pending">VIEW</div>
-            </div>
-        </div>
-        <div class="request">
-            <div class="title">
-                <h1>understand what node.js really is</h1>
-            </div>
-            <div class="attr">
-                <div class="status">Status : <span id="currentStatus">Pending</span></div>
-                <div class="viewButton pending">VIEW</div>
+        <div id="loginForm">
+            <div class="request">
+                <div class="title">
+                    <h1>Login Form</h1>
+                </div>
+                <div class="attr"></div>
+                    <input id="loginFormEmail" type="text" name="email" placeholder="email">
+                    <input id="loginFormPassword" type="password" name="password" placeholder="password">
+                    <div id="loginButton" class="viewButton ready">SEARCH</div>
+                </div>
             </div>
         </div>
     </div>
