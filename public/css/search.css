@@ -6,8 +6,7 @@ body {
 	font-family: 'Helvetica Neue';
 	text-align: center;
 	height: 100%;
-    color: white;
-    
+    color: black;
 }
 
 body, h1, h2 {
@@ -18,35 +17,37 @@ h2 {
 	margin: 0px;
 }
 
-.blueText {
-	color: white;
-}
-
 #changing {
-	border-bottom: solid 1px white;
+    padding-left: 10px;
+    color: gray;
 }
 
 #coreWant {
     background-color: transparent;
-    border: none;
+    border: solid lightgray 2px;
     resize: none;
-    font-size: 38pt;
+    font-size: 25pt;
     font-weight: 100;
-    text-align: center;
+    text-align: left;
     overflow: hidden;
+    border-radius: 8px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    width: 50%;
+    padding-left: 10px;
 }
 
 #coreWant:focus {
     outline: none;
     box-shadow: none;
-    border-bottom: solid white 1px;
 }
 
 .col3 {
-    float: left;
-    width: 30%;
-    margin-right: 3.3%;
-    text-align: center;
+
+}
+
+.marginRight {
+    margin-right: 2%;
 }
 
 #logoSection {
@@ -58,16 +59,16 @@ h2 {
 #options {
     margin-right: auto;
     margin-left: auto;
-    margin-top: 45px;
+    margin-top: 0px;
     clear: both;
-    display: none;
-    background:rgba(52,152,219,0.6);
+    background:rgba(52,152,219,1.0);
     overflow: hidden;
-    width: 70%;
+    width: 20%;
     padding-top: 20px;
     padding-bottom: 24px;
     color: white;
-    border-radius: 6px;
+    border-radius: 8px;
+    min-width: 245px;
 }
 
 #options i {
@@ -88,8 +89,16 @@ h2 {
     font-weight: 200;
 }
 
-.rotatingTop {
+/*.rotatingTop {
     margin-bottom: 12%;
+}*/
+
+select {
+    width: 50%;
+    font-size: 12pt;
+    background-color: white;
+    border: none;
+    color: rgba(52,152,219,1.0);
 }
 
 #search {
@@ -98,10 +107,10 @@ h2 {
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 4px;
-    border: #2980b9 solid 2px;
-    background-color: rgba(52,152,219,0.7);
-    color: white;
+    border: #95a5a6 solid 1px;
+    background-color: #ecf0f1;
     font-weight: 200;
+    color: black
 }
 
 #search:hover {
@@ -114,34 +123,49 @@ h2 {
     outline: none;
 }
 
-#tagline {
-    clear: both;
+#speaker {
+    color: #3498db;
 }
 
-#tagline p {
+.tagline {
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+}
+
+.tagline p {
     padding: 0px;
-    margin: 0px;
     font-size: 20pt;
     font-weight: 200;
 }
 
+#typeWriter {
+    text-align: left;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border: lightgray solid 2px;
+    border-radius: 8px;
+}
+
 #typeWriter span {
-	font-size: 38pt;
+	font-size: 26pt;
 	font-weight: 100;
 }
 
 #topSection {
 	height: 100%;
-    background: url('../img/bgtop2.jpg') no-repeat center top;
-    background-size: cover;
 }
 
-.topdescribe, .topdescribe2, .learnmore, #input {
+.topdescribe2, #coreWant, #input, .learnmore, #options, #format, #spend {
 	display: none;
 }
 
 .topdescribe {
     padding-top: 200px;
+    text-align: left;
 }
 
 
