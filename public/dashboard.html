@@ -24,24 +24,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div id="logoSection">
             <img src="img/logo_blue.png" class="img-responsive">
         </div>
-        <div class="sideSection" id="requests">
+        <div id="sidebarRequests" class="hiddenAtStart sideSection sidebarActive">
             <i class="fa fa-search"></i> Requests
         </div>
-        <div class="sideSection" id="create">
+        <div id="sidebarCreate" class="hiddenAtStart sideSection">
             <i class="fa fa-plus"></i> Create New Request
         </div>
-        <div class="sideSection" id="back">
+        <div id="sidebarBack" class="sideSection">
             <i class="fa fa-arrow-circle-left"></i> Back to homepage
         </div>
-        <div class="sideSection" id="signout">
+        <div id="sidebarSignout" class="hiddenAtStart sideSection">
             <p><i class="fa fa fa-sign-out"></i> Sign out
         </div>
-        <div id="copyright">
+        <div id="sidebarCopyright">
             &copy; SelfStart 2015
         </div>
     </div>
     <div id="content">
-        <div id="requestsList">
+        <div id="requestsList" class="hiddenAtStart">
             <div class="request">
                 <div class="title">
                     <h1>I want to create an iOS app</h1>
@@ -70,7 +70,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </div>
             </div>
         </div>
-        <div id="loginForm">
+        <div id="loginForm" class="hiddenAtStart">
             <div class="request">
                 <div class="title">
                     <h1>Login Form</h1>
@@ -78,7 +78,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <div class="attr"></div>
                     <input id="loginFormEmail" type="text" name="email" placeholder="email">
                     <input id="loginFormPassword" type="password" name="password" placeholder="password">
-                    <div id="loginButton" class="viewButton ready">SEARCH</div>
+                    <div id="loginButton" class="viewButton ready">LOG IN</div>
                 </div>
             </div>
         </div>

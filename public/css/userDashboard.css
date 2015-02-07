@@ -31,7 +31,7 @@ body, #requests {
 	padding-top: 80px;
 }
 
-#copyright {
+#sidebarCopyright {
 	position: fixed;
 	bottom: 20;
 	left: 30;
@@ -68,7 +68,7 @@ h1 {
 	background-color: #27ae60;
 }
 
-#requests {
+.sidebarActive {
 	background-color: #2980b9;
 }
 
@@ -155,4 +155,8 @@ input {
 #loginButton {
     width: 25%
     text-allign: center;
+}
+
+.hiddenAtStart {
+    display: none;
 }
