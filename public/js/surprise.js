@@ -1,18 +1,5 @@
 (function() {
 
-	window.setTimeout(function(){
-		$('.topdescribe').fadeIn(1800, function(){
-			setTimeout(function(){
-				$('.topdescribe2').fadeIn(1800, function(){
-					setTimeout(function(){
-	    				$('.learnmore').css('display', 'initial');
-	    				$('.learnmore').addClass('animated pulse infinite');
-					},3500);
-				});
-			},0);
-    	});
-    },3000);
-
     window.onload = function(){
     	setTimeout(function(){
 			$("#b").slideDown(300, function(){
@@ -22,6 +9,11 @@
 							$("#d").slideDown(300, function(){
 								setTimeout(function(){
 									$("#e").slideDown(300);
+                                    $("#topGoDown").css("margin-top", "25px");
+                                    $("#tagline").css("padding-bottom", "6%");
+                                    $("#topGoDown").addClass("animated");
+                                    $("#topGoDown").addClass("infinite");
+                                    $("#topGoDown").addClass("bounce");
 								}, 1600);
 							});
 						}, 1300);
@@ -53,6 +45,18 @@
     	$('#getPresent').click(function(){
     		$('#start').ScrollTo();
     	});
+
+        $('#learnYouButton').click(function(){
+            $('#learnYou').slideDown();
+        });
+
+        $('#learnMagicButton').click(function(){
+            $('#learnMagic').slideDown();
+        });
+
+        $('#learnResultsButton').click(function(){
+            $('#learnResults').slideDown();
+        });
 
     	// Timeline javascript
 
@@ -101,12 +105,14 @@
 
 	function blur(){
 		$('#survey').css("-webkit-filter", "blur(7px)");
-		$('#timelineSection').css("-webkit-filter", "blur(7px)");
+		$('#continue').css("-webkit-filter", "blur(7px)");
+        $('#footer').css("-webkit-filter", "blur(7px)");
 	}
 
 	function unblur(){
 		$('#survey').css("-webkit-filter", "none");
-		$('#timelineSection').css("-webkit-filter", "none");
+		$('#continue').css("-webkit-filter", "none");
+        $('#footer').css("-webkit-filter", "none");
 	}
 
     /* Function for Receiving & Handling JWT Token (for User Authentication) */
