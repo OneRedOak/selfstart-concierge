@@ -43,7 +43,8 @@ h2 {
 }
 
 .col3 {
-
+    float: left;
+    width: 32%;
 }
 
 .marginRight {
@@ -63,12 +64,14 @@ h2 {
     clear: both;
     background:rgba(52,152,219,1.0);
     overflow: hidden;
-    width: 20%;
+    width: 50%;
     padding-top: 20px;
     padding-bottom: 24px;
     color: white;
     border-radius: 8px;
     min-width: 245px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
 }
 
 #options i {
@@ -159,7 +162,7 @@ select {
 	height: 100%;
 }
 
-.topdescribe2, #coreWant, #input, .learnmore, #options, #format, #spend {
+.topdescribe2, #coreWant, #input, .learnmore, #options {
 	display: none;
 }
 

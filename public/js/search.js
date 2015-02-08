@@ -2,18 +2,6 @@
 
 	var showingOptions = false;
 
-	// window.setTimeout(function(){
-	// 	$('.topdescribe').fadeIn(1800, function(){
-	// 		setTimeout(function(){
-	// 			$('.topdescribe2').fadeIn(1800, function(){
-	// 				setTimeout(function(){
-	//     				$('.learnmore').css('display', 'initial');
-	// 				},3500);
-	// 			});
-	// 		},0);
- //    	});
- //    },3000);
-
     window.onload = function(){
     	topWriter();
 
@@ -77,41 +65,10 @@
 	function uncoverOptions(){
 		$("#options").slideDown(1000);
 		setTimeout(function(){
-			$(".col3").css('float', 'left');
-			$(".col3").animate({
-				width: "49%"
-			}, 1000, function(){});
-			$("#options").animate({
-				width: "35%"
-			}, 1000, function(){
-				$("#format").fadeIn(1000);
-				// $("#format").css('display', 'initial');
-			});
-			$("#backKnow").addClass("marginRight");
-			setTimeout(function(){
-				$(".col3").animate({
-					width: "32%"
-				}, 1000, function(){});
-				$("#options").animate({
-					width: "50%"
-				}, 1000, function(){
-					$("#spend").css('display', 'initial');
-				});
-				$("#format").addClass("marginRight");
-				$("#typeWriter").css("border-bottom-left-radius", "0px");
-				$("#typeWriter").css("border-bottom-right-radius", "0px");
-				$("#options").css("border-top-left-radius", "0px");
-				$("#options").css("border-top-right-radius", "0px");
-				$("#options").css("border-left", "lightgray 2px solid");
-				$("#options").css("border-right", "lightgray 2px solid");
-				$("#options").css("border-bottom", "lightgray 2px solid");
-				setTimeout(function(){
-					$("#typeWriter").css("display", "none");
-					$("#coreWant").css("display", "initial");
-					$("#input").fadeIn(800);
-				}, 1500);
-			}, 2500);
-		}, 2500);
+			$("#typeWriter").css("display", "none");
+			$("#coreWant").css("display", "initial");
+			$("#input").fadeIn(800);
+		}, 1500);
 	}
 
 	function showKeyInput(){

@@ -84,7 +84,7 @@ button {
 	width: 100%;
     padding-top: 50px;
     padding-bottom: 100px;
-    text-align: left;
+    text-align: center;
 }
 
 #footer button {
@@ -101,10 +101,9 @@ button {
 }
 
 
-#footer h4 {
+#footer h5, #footer h4 {
     color: white;
     font-weight: 200;
-    text-align: left;
 }
 
 #footer textarea {
@@ -119,6 +118,8 @@ button {
 
 #footer img {
     margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .gogo {
@@ -179,6 +180,10 @@ button {
     text-align: center;
     color: gray;
     font-size: 18px;
+}
+
+.info input {
+    width: 100%;
 }
 
 .under {
@@ -352,7 +357,7 @@ textarea:focus, input:focus{
 }
 
 #weDo i {
-	font-size: 37pt;
+	font-size: 48pt;
 }
 
 #weDo p {

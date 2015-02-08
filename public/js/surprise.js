@@ -7,14 +7,9 @@
 					$("#c").slideDown(300, function(){
 						setTimeout(function(){
 							$("#d").slideDown(300, function(){
-								setTimeout(function(){
-									$("#e").slideDown(300);
-                                    $("#topGoDown").css("margin-top", "25px");
-                                    $("#tagline").css("padding-bottom", "6%");
-                                    $("#topGoDown").addClass("animated");
-                                    $("#topGoDown").addClass("infinite");
-                                    $("#topGoDown").addClass("bounce");
-								}, 1600);
+                                $("#topGoDown").css("margin-top", "25px");
+                                $("#topGoDown").addClass("animated");
+                                $("#topGoDown").addClass("bounce");
 							});
 						}, 1300);
 					});
