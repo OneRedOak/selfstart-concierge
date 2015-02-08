@@ -19,7 +19,9 @@ router.post('/register', function(req, res) {
         qbackground: user.qbackground,
         qformat: user.qformat,
         qbudget: user.qbudget,
-        qdate: new Date().getTime()
+        qdate: new Date().getTime(),
+        rlink: null,
+        rstatus: null
     });
 
     var payload = {
