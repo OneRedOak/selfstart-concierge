@@ -13,7 +13,7 @@
         // alert(obj.requests.length);
         for (var i = 0; i < obj.requests.length; i++) {
             var targetRequest = obj.requests[i];
-            createRequest(targetRequest.title, targetRequest.status, targetRequest.link);
+            createRequest(targetRequest.query, targetRequest.rstatus, targetRequest.rlink);
         };
     }
 
