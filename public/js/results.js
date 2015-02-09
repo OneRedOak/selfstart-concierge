@@ -9,11 +9,11 @@
             $("#heading").animate({
                 height: "150px",
                 lineHeight: "150px"
-            }, 500, function(){
+            }, 1500, function(){
 
             });
-            $("#nav").slideDown(500);
-            $("#introVideo").fadeIn(500);
+            $("#nav").slideDown(1500);
+            $("#introVideo").fadeIn(1500);
         },800);
     }
 

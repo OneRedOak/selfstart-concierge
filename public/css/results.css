@@ -63,6 +63,53 @@ body {
 	background-color: yellow;
 }
 
+.col-md-4 {
+	padding-top: 50px;
+}
+
+#footer {
+	background-color: #2c3e50;
+	width: 100%;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    text-align: center;
+}
+
+#footer button {
+    text-align: right;
+    margin-top: 20px;
+    background-color: white;
+    color: #2c3e50;
+    padding-left: 19px;
+    padding-right: 19px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    outline: none;
+    border: none;
+}
+
+#footer h5, #footer h4 {
+    color: white;
+    font-weight: 200;
+}
+
+#footer textarea {
+    border-radius: 3px;
+    height: 80px;
+}
+
+#footerLinks a {
+    display: block;
+    margin-top: 15px;
+}
+
+#footer img {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 .go {
 	background-color: #2ecc71;
 	width: 15%;
@@ -146,13 +193,15 @@ body {
 }
 
 #sidebar {
-	width: 18%;
+	width: 20%;
 	float: left;
 	background-color: white;
 	top: 0px;
 	text-align: center;
 	padding-top: 30px;
 	font-family: 'Sue Ellen Francisco', cursive;
+	padding-right: 2%;
+	height: 100%;
 	/*font-family: 'Annie Use Your Telescope', cursive;*/
 }
 
@@ -172,6 +221,20 @@ body {
 
 .titleText {
 	font-size: 20pt;
+}
+
+textarea {
+    width: 100%;
+    border: lightgray solid 1px;
+    border-radius: 7px;
+    resize: none;
+    padding: 10px;
+}
+
+textarea:focus, input:focus{
+	outline: none;
+	box-shadow: none;
+    border: #3498db solid 1px;
 }
 
 .stars {
