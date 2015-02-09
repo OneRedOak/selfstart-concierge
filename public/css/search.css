@@ -32,7 +32,9 @@ h2 {
     overflow: hidden;
     border-radius: 8px;
     width: 50%;
-    padding-left: 10px;
+    padding-left: 15px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 #coreWant:focus {
@@ -156,6 +158,8 @@ select {
     margin-right: auto;
     background-color: white;
     border-radius: 8px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 #typeWriter span {

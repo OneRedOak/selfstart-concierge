@@ -15,7 +15,7 @@ var UserSchema = new Schema({
     qbudget: String,
     qdate: String,
     rlink: String,
-    rstatus: boolean
+    rstatus: Boolean
 });
 
 UserSchema.methods.toJSON = function() {
