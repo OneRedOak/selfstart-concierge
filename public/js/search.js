@@ -66,7 +66,7 @@
 		$("#options").slideDown(1000);
 		setTimeout(function(){
 			$("#typeWriter").css("display", "none");
-			$("#coreWant").css("display", "initial");
+			$("#coreWant").css("display", "inline-block");
 			$("#input").fadeIn(800);
 		}, 1500);
 	}
