@@ -11,6 +11,7 @@
         updatePageAuthStatus();
 
         $('#sidebarSignout').click(userLogOut);
+        $('#loginButton').click(submitUserLogin);
 
     };
 
@@ -72,6 +73,7 @@
         document.getElementById("requestsList").appendChild(container);
     }
 
+    /* Logs user out and updates dashboard accordingly */
     var userLogOut = function() {
         authTokenHandler().removeToken();
         $('#requestsList').hide();
@@ -111,11 +113,25 @@
             },
             success: function(data) {return data;}
 
-        }).done(function() {
-            alert('Success');
-        }).fail(function() {
-            alert('Failed');
         });
     };
+
+    var submitUserLogin = function() {
+        var url = 'http://localhost:3000/form/login';
+        var user = {
+            email: $("#loginFormEmail").val(),
+            password: $("#loginFormPassword").val()
+        };
+
+        $.post(url, user)
+            .done(function(res) {
+                alert('Successful login! ' + user.email);
+                authTokenHandler().setToken(res.token);
+                updatePageAuthStatus();
+            })
+            .fail(function(err) {
+                alert('Opps! Something went wrong logging in.', err.message);
+            });
+    }
 
 })();

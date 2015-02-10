@@ -27,11 +27,11 @@ router.post('/register', function(req, res) {
     });
 });
 
-app.post('/login', function(req, res) {
+router.post('/login', function(req, res) {
     var user = req.body;
 
     var searchUser = {
-        email: req.user.email
+        email: user.email
     };
 
     User.findOne(searchUser, function(err, user) {
@@ -41,7 +41,7 @@ app.post('/login', function(req, res) {
             return res.status(401).send({message: 'Wrong email/password'});
         }
 
-        user.comparePasswords(req.user.password, function(err, isMatch) {
+        user.comparePasswords(req.body.password, function(err, isMatch) {
 
             if (err) {
                 throw err;
@@ -67,7 +67,7 @@ function createSendToken(user, res) {
     var token = jwt.encode(payload, "tempSecretKey");
 
     res.status(200).send({
-        user: newUser.toJSON(),
+        user: user.toJSON(),
         token: token
     });
 
