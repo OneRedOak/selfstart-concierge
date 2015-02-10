@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var passport = require('passport');
 
 /* MongoDB Connection */
 var mongoose = require('mongoose');
@@ -28,6 +29,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(passport.initialize());
+
+passport.serializeUser(function(user, done) {
+    done(null, user.id);
+});
 
 /* Middleware for Cross Origin Resource Sharing */
 app.use(function(req, res, next) {

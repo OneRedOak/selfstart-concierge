@@ -119,9 +119,9 @@
             type: 'GET',
             headers: {
                 authorization: 'Bearer ' + authTokenHandler().getToken()
-            },
-            success: function(data) {return data;}
-
+            }
+        }).done(function(res) {
+            return res;
         });
     };
 
