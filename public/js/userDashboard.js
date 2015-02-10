@@ -13,6 +13,13 @@
         $('#sidebarSignout').click(userLogOut);
         $('#loginButton').click(submitUserLogin);
 
+        $('#loginFormPassword').keypress(function (e) {
+           var key = e.which;
+           if(key == 13)  // the enter key code
+            {
+              submitUserLogin();
+            }
+          });
     };
 
     function populateRequests(data){

@@ -135,6 +135,10 @@ h1 {
 	padding-left: 25px;
 }
 
+.sideSection:hover {
+	cursor: pointer;
+}
+
 #sidebar i {
 	margin-right: 7px;
 }
