@@ -28,13 +28,14 @@ var authTokenHandler = function() {
     return authToken;
 };
 
+/* Intercepts HTTP call and attaches header with JWT (for token authentication purposes) */
 var authInterceptor = function(authToken) {
     return {
         request: function(config) {
             var token = authToken.getToken();
 
             if(token) {
-                config.headers.Authorization = 'Bearer' + token;
+                config.headers.Authorization = 'Bearer ' + token;
             }
             return config;
         },

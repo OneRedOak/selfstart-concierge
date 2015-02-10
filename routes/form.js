@@ -1,13 +1,11 @@
 var express = require('express');
-var jwt = require('../services/jwt.js');
+var jwt = require('jwt-simple');
 var router = express.Router();
 var User = require('../models/user');
 
 /* Test Post from User Sign Up Form */
 router.post('/register', function(req, res) {
-    // console.log("Reached form/register Router");
     var user = req.body;
-    console.log(user.email);
 
     var newUser = new User({
         fullname: user.fullname,
@@ -26,7 +24,7 @@ router.post('/register', function(req, res) {
 
     var payload = {
         iss: req.hostname,
-        sub: user._id
+        sub: newUser.id
     };
 
     var token = jwt.encode(payload, "tempSecretKey");
@@ -44,7 +42,15 @@ router.get('/searches', function(req, res) {
 
     if(!req.headers.authorization) {
         return res.status(401).send({
-            message: 'You are not authorized'
+            message: 'You are not authorized.'
+        });
+    }
+    var token = req.headers.authorization.split(' ')[1];
+    var payload = jwt.decode(token, "tempSecretKey");
+
+    if (!payload.sub) {
+        res.status(401).send({
+            message: 'You are not authorized!'
         });
     }
 

@@ -2,6 +2,12 @@
 
     window.onload = function(){
 
+        populateRequests(JSON.stringify({
+            query: 'querys',
+            rstatus: 'rstatus',
+            rlink: 'rlink'
+        }));
+
         updatePageAuthStatus();
 
         $('#sidebarSignout').click(userLogOut);
@@ -9,13 +15,9 @@
     };
 
     function populateRequests(data){
-        var obj = JSON.parse(data);
-        // alert(obj.requests.length);
-        for (var i = 0; i < obj.requests.length; i++) {
-            var targetRequest = obj.requests[i];
-            createRequest(targetRequest.query, targetRequest.rstatus, targetRequest.rlink);
-        };
-    }
+        var targetRequest = JSON.parse(data);
+        createRequest(targetRequest.query, targetRequest.rstatus, targetRequest.rlink);
+    };
 
     function createRequest(requestTitle, requestStatus, requestLink){
         // Creates the over all request div
@@ -95,13 +97,20 @@
             /* Hide */
             var prevSearches = getPrevUserSearches();
 
-            alert(prevSearches);
+            console.log(prevSearches);
         }
     };
 
     var getPrevUserSearches = function() {
-        $.get('http://localhost:3000/form/searches', function(data) {
-            console.log(data);
+
+        $.ajax({
+            url: 'http://localhost:3000/form/searches',
+            type: 'GET',
+            headers: {
+                authorization: 'Bearer ' + authTokenHandler().getToken()
+            },
+            success: function(data) {return data;}
+
         }).done(function() {
             alert('Success');
         }).fail(function() {
