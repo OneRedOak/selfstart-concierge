@@ -20,6 +20,8 @@
               submitUserLogin();
             }
           });
+
+        $("#content").css("height", window.innerHeight);
     };
 
     function populateRequests(data){
@@ -30,11 +32,11 @@
     function createRequest(requestTitle, requestStatus, requestLink){
         // Creates the over all request div
         var container = document.createElement("div");
-        container.classList.add("request");
+        container.className += " request";
 
         // Creates the title div + title heading
         var title = document.createElement("div");
-        title.classList.add("title");
+        title.className += " title";
         var titleHeading = document.createElement("h1");
         titleHeading.innerHTML = requestTitle;
         title.appendChild(titleHeading);
@@ -43,14 +45,14 @@
 
         // Creates the attribute div
         var attribute = document.createElement("div");
-        attribute.classList.add("attr");
+        attribute.className += " attr";
 
         // Creates status + current status
         var status = document.createElement("div");
-        status.classList.add("status");
+        status.className += " status";
         status.innerHTML = "Status :";
         var currentStatus = document.createElement("span");
-        currentStatus.classList.add("currentStatus");
+        currentStatus.className += " currentStatus";
         currentStatus.innerHTML = " Ready";
         status.appendChild(currentStatus);
 
@@ -58,11 +60,11 @@
 
         // Creates the View button
         var readyButton = document.createElement("div");
-        readyButton.classList.add("viewButton");
+        readyButton.className += " viewButton";
         readyButton.innerHTML = "VIEW";
 
         if (requestStatus) {
-            readyButton.classList.add("ready");
+            readyButton.className += " ready";
 
             // Creates link to results
             var link = document.createElement("a");
@@ -70,7 +72,7 @@
             link.appendChild(readyButton);
             attribute.appendChild(link); // Puts link + button in attribute
         } else {
-            readyButton.classList.add("pending");
+            readyButton.className += " pending";
             attribute.appendChild(readyButton); // Puts buttin in attribute
         }
 

@@ -47,6 +47,12 @@ h2 {
     width: 33.33333333%;
 }
 
+#confirmAlert {
+    background-color: red;
+    height: 50px;
+    width: 100%;
+}
+
 .marginRight {
     margin-right: 2%;
 }
@@ -101,7 +107,7 @@ select {
     font-size: 12pt;
     background-color: white;
     border: none;
-    color: rgba(52,152,219,1.0);
+    color: #3498db;
 }
 
 #searchSection {

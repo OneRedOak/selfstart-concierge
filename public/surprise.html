@@ -57,24 +57,6 @@
         <i id="topGoDown" class="fa fa-angle-down gogo"></i>
     </div>
 
-
-    <div class="modal fade" id="blurModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button id="closeModal" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title grayText" id="myModalLabel">Request submitted</h4>
-          </div>
-          <div class="modal-body">
-            <h2>First step to accomplishing you goal: <i class="fa fa-check-square-o"></i></h2>
-            <p>You must <span class="confirmEmail">confirm your email address</span> in order for us to notify you when your results are ready. Expect results within <span class="confirmEmail">24 hours of your submission</span>.<br><br>We can't wait to hear your thoughts on our recommendations!</p>
-          </div>
-          <div class="modal-footer">
-            <span class="grayText">&copy; SelfStart 2015</span>
-          </div>
-        </div>
-      </div>
-    </div>
     <div id="timelineSection">
         <div class="container">
             <h1>Here's how it works</h1>
@@ -182,7 +164,9 @@
                 </div>
             </div>
         </div>
-        <button id="submitSurvey" class="submit" type="submit" data-toggle="modal" data-backdrop="static" data-target="#blurModal">Submit</button>
+        <form action="dashboard.html">
+            <button id="submitSurvey" class="submit" type="submit">Submit</button>
+        </form>
     </div>
 
     <div id="footer">
@@ -190,9 +174,9 @@
             <div class="row">
                 <div id="footerLinks" class="col-md-4">
                     <h5>Site Links</h5>
-                    <a href="">Search Page</a>
-                    <a href="">Home Page</a>
-                    <a href="">About Us</a>
+                    <a href="index.html">Search Page</a>
+                        <a href="surprise.html">Home Page</a>
+                        <a href="about.html">About Us</a>
                 </div>
                 <div class="col-md-4">
                     <h4>Let us know what you think! We're looking for any and all feedback.</h4>

@@ -1,3 +1,12 @@
+a {
+	color: inherit;
+}
+
+a:hover {
+	text-decoration: none;
+	color: inherit;
+}
+
 .attr {
 	overflow: hidden;
 }
@@ -27,9 +36,22 @@ body, #requests {
 	width: 80%;
 	background-color: #ecf0f1;
 	float: right;
-	padding-right: 40px;
 	padding-top: 80px;
-	padding-left: 40px;
+	padding-left: 10%;
+	overflow: hidden;
+}
+
+#confirmAlert {
+    background-color: #e74c3c;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 20px;
+    padding-right: 15px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    width: 70%;
+    color: white;
+    font-size: 13pt;
 }
 
 .col-md-4 {
@@ -78,13 +100,7 @@ body, #requests {
     margin-right: auto;
 }
 
-#sidebarCopyright {
-	position: fixed;
-	bottom: 20;
-	left: 30;
-	font-size: 11pt;
-	color: #bdc3c7;
-}
+
 
 h1 {
 	font-size: 18pt;
@@ -129,6 +145,10 @@ h1 {
 	margin-bottom: 40px;
 }
 
+#requestsList {
+	height: 100%;
+}
+
 .sideSection {
 	padding-top: 20px;
 	padding-bottom: 20px;
@@ -153,10 +173,16 @@ h1 {
 	float: left;
 	box-shadow:         0px 0px 25px 0px rgba(50, 50, 50, 0.75);
 	z-index: 10;
-	min-width: 300px;
+	min-width: 250px;
 	font-size: 14pt;
 	text-align: left;
 	position: absolute;
+}
+
+#sidebarCopyright {
+	font-size: 11pt;
+	color: white;
+	text-align: left;
 }
 
 .status {

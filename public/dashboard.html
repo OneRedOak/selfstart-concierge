@@ -1,4 +1,4 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <head>
     <title>Dashboard</title>
     <link rel="shortcut icon" href="img/favicon.ico">
@@ -18,42 +18,24 @@
         <div id="sidebarRequests" class="hiddenAtStart sideSection sidebarActive">
             <i class="fa fa-search"></i> Requests
         </div>
-        <div id="sidebarCreate" class="hiddenAtStart sideSection">
+        <a href="index.html"><div id="sidebarCreate" class="hiddenAtStart sideSection">
             <i class="fa fa-plus"></i> Create New Request
-        </div>
-        <div id="sidebarBack" class="sideSection">
+        </div></a>
+        <a href="index.html"><div id="sidebarBack" class="sideSection">
             <i class="fa fa-arrow-circle-left"></i> Back to homepage
-        </div>
+        </div></a>
         <div id="sidebarSignout" class="hiddenAtStart sideSection">
             <p><i class="fa fa fa-sign-out"></i> Sign out
         </div>
-        <div id="sidebarCopyright">
-            &copy; SelfStart 2015
-        </div>
     </div>
     <div id="content">
+        <div id="confirmAlert">
+            Check you email inbox and confirm your email. We'll notify you of your results within 24 hours of submission.
+        </div>
         <div id="requestsList" class="hiddenAtStart">
             <div class="request">
                 <div class="title">
-                    <h1>I want to create an iOS app</h1>
-                </div>
-                <div class="attr">
-                    <div class="status">Status : <span id="currentStatus">Ready</span></div>
-                    <div class="viewButton ready">VIEW</div>
-                </div>
-            </div>
-            <div class="request">
-                <div class="title">
                     <h1>learn ruby on rails</h1>
-                </div>
-                <div class="attr">
-                    <div class="status">Status : <span id="currentStatus">Pending</span></div>
-                    <div class="viewButton pending">VIEW</div>
-                </div>
-            </div>
-            <div class="request">
-                <div class="title">
-                    <h1>understand what node.js really is</h1>
                 </div>
                 <div class="attr">
                     <div class="status">Status : <span id="currentStatus">Pending</span></div>
@@ -78,9 +60,9 @@
                 <div class="row">
                     <div id="footerLinks" class="col-md-4">
                         <h5>Site Links</h5>
-                        <a href="">Search Page</a>
-                        <a href="">Home Page</a>
-                        <a href="">About Us</a>
+                        <a href="index.html">Search Page</a>
+                        <a href="surprise.html">Home Page</a>
+                        <a href="about.html">About Us</a>
                     </div>
                     <div class="col-md-4">
                         <h4>Let us know what you think! We're looking for any and all feedback.</h4>
@@ -91,7 +73,7 @@
                         <img src="img/started.png" class="img-responsive">
                     </div>
                 </div>
-                <div id="copyright">&copy; SelfStart 2015</div>
+                <div id="sidebarCopyright">&copy; SelfStart 2015</div>
             </div>
         </div>
     </body>
