@@ -25,7 +25,10 @@ UserSchema.methods.toJSON = function() {
     return user;
 };
 
-module.exports = mongoose.model('User', UserSchema);
+/* Decrypts and compares submitted password to account password */
+UserSchema.methods.comparePasswords = function(password, callback) {
+    bcrypt.compare(password, this.password, callback);
+};
 
 /* Salt password prior to saving in DB */
 UserSchema.pre('save', function(next) {
@@ -44,3 +47,5 @@ UserSchema.pre('save', function(next) {
         });
     });
 });
+
+module.exports = mongoose.model('User', UserSchema);

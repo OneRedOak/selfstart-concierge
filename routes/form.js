@@ -22,20 +22,56 @@ router.post('/register', function(req, res) {
         rstatus: null
     });
 
+    newUser.save(function(err) {
+        createSendToken(newUser, res);
+    });
+});
+
+app.post('/login', function(req, res) {
+    var user = req.body;
+
+    var searchUser = {
+        email: req.user.email
+    };
+
+    User.findOne(searchUser, function(err, user) {
+        if (err) {throw err}
+
+        if(!user) {
+            return res.status(401).send({message: 'Wrong email/password'});
+        }
+
+        user.comparePasswords(req.user.password, function(err, isMatch) {
+
+            if (err) {
+                throw err;
+            }
+
+            if (!isMatch) {
+                return res.status(401).send({message: 'Wrong email/password'});
+            }
+
+            createSendToken(user, res);
+
+        });
+    });
+});
+
+/* Logic to create token */
+function createSendToken(user, res) {
+
     var payload = {
-        iss: req.hostname,
-        sub: newUser.id
+        sub: user.id
     };
 
     var token = jwt.encode(payload, "tempSecretKey");
 
-    newUser.save(function(err) {
-        res.status(200).send({
-            user: newUser.toJSON(),
-            token: token
-        });
+    res.status(200).send({
+        user: newUser.toJSON(),
+        token: token
     });
-});
+
+}
 
 /* Returns previous searches made by user */
 router.get('/searches', function(req, res) {
