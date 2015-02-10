@@ -45,28 +45,42 @@ var loginStrategy = new LocalStrategy(strategyOptions, function(req, email, pass
 
 /* Register strategy using Passport for verifying user registration authenticity */
 var registerStrategy = new LocalStrategy(strategyOptions, function(req, email, password, done) {
-    console.log(req);
-    var user = req.body;
 
-    var newUser = new User({
-        fullname: user.fullname,
-        email: user.email,
-        password: "selfstart",
-        query: user.query,
-        qlearn: user.qlearn,
-        qwhy: user.qwhy,
-        qbackground: user.qbackground,
-        qformat: user.qformat,
-        qbudget: user.qbudget,
-        qdate: new Date().getTime(),
-        rlink: null,
-        rstatus: null
+    var searchUser = {
+        email: email
+    };
+
+    User.findOne(searchUser, function(err, user) {
+        if (err) {
+            return done(err);
+        }
+
+        if (user) {
+            return done(null, false, {message: 'Email already exists'});
+        }
+
+        var user = req.body;
+
+        var newUser = new User({
+            fullname: user.fullname,
+            email: user.email,
+            password: "selfstart",
+            query: user.query,
+            qlearn: user.qlearn,
+            qwhy: user.qwhy,
+            qbackground: user.qbackground,
+            qformat: user.qformat,
+            qbudget: user.qbudget,
+            qdate: new Date().getTime(),
+            rlink: null,
+            rstatus: null
+        });
+
+        newUser.save(function (err) {
+            done(null, newUser);
+        });
+
     });
-
-    newUser.save(function(err) {
-        done(null, newUser);
-    });
-
 });
 
 passport.use('local-register', registerStrategy);
