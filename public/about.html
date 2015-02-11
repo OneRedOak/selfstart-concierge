@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/about.css">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
     <script type="text/javascript" src="js/jquery.sticky.js"></script>
     <script type="text/javascript" src="js/about.js"></script>
     <script>
@@ -95,8 +96,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </div>
                 <div class="col-md-5">
                     <h4>Let us know what you think! We're looking for any and all feedback.</h4>
-                    <textarea rows="4"></textarea>
-                    <button>Submit</button>
+                    <textarea rows="4" id="feedbackForm"></textarea>
+                    <button id="feedbackSubmit">Submit</button>
                 </div>
                 <div class="col-md-4">
                     <div class="mailingSection">
@@ -114,5 +115,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <div id="copyright">&copy; SelfStart 2015</div>
         </div>
     </div>
+    <script type="text/javascript">
+        $("#emailSignup").validate();
+    </script>
 </body>
 </html>
