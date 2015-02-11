@@ -72,9 +72,7 @@
 
 		$("#submitSurvey").click(function(){
             if(validateEmail($("#surveyEmail").val())){
-    			blur();
                 submitFormPost(); // POSTs form to backend route
-
             } else {
                 alert("Please enter valid Email");
             }
@@ -89,8 +87,6 @@
            if(key == 13)  // the enter key code
             {
                 if(validateEmail($("#surveyEmail").val())){
-                    $('#blurModal').modal('show');
-                    blur();
                     submitFormPost();
                 } else {
                     alert("Please enter valid Email");
