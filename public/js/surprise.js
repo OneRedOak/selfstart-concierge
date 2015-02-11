@@ -140,6 +140,7 @@
         var user = {
             fullname: $("#surveyFullName").val(),
             email: $("#surveyEmail").val(),
+            password: 'selfstart',
             query: $("#surveyQuery").val(),
             qlearn: $("#surveyQlearn").val(),
             qwhy: $("#surveyQwhy").val(),

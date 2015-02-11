@@ -1,60 +1,20 @@
 var express = require('express');
 var jwt = require('jwt-simple');
 var router = express.Router();
-var User = require('../models/user');
+var passport = require('passport');
+var LocalStrategy = require('../services/localStrategy.js')
+
+passport.use('local-register', LocalStrategy.register);
+passport.use('local-login', LocalStrategy.login);
 
 /* Test Post from User Sign Up Form */
-router.post('/register', function(req, res) {
-    var user = req.body;
-
-    var newUser = new User({
-        fullname: user.fullname,
-        email: user.email,
-        password: "selfstart",
-        query: user.query,
-        qlearn: user.qlearn,
-        qwhy: user.qwhy,
-        qbackground: user.qbackground,
-        qformat: user.qformat,
-        qbudget: user.qbudget,
-        qdate: new Date().getTime(),
-        rlink: null,
-        rstatus: null
-    });
-
-    newUser.save(function(err) {
-        createSendToken(newUser, res);
-    });
+router.post('/register', passport.authenticate('local-register'), function (req, res) {
+    console.log(req);
+    createSendToken(req.user, res);
 });
 
-router.post('/login', function(req, res) {
-    var user = req.body;
-
-    var searchUser = {
-        email: user.email
-    };
-
-    User.findOne(searchUser, function(err, user) {
-        if (err) {throw err}
-
-        if(!user) {
-            return res.status(401).send({message: 'Wrong email/password'});
-        }
-
-        user.comparePasswords(req.body.password, function(err, isMatch) {
-
-            if (err) {
-                throw err;
-            }
-
-            if (!isMatch) {
-                return res.status(401).send({message: 'Wrong email/password'});
-            }
-
-            createSendToken(user, res);
-
-        });
-    });
+router.post('/login', passport.authenticate('local-login'), function (req, res) {
+    createSendToken(req.user, res);
 });
 
 /* Logic to create token */
