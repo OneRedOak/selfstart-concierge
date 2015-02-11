@@ -144,7 +144,7 @@
             qbackground: $("#surveyQbackground").val(),
             qformat: $("#surveyQformat").val(),
             qbudget: $("#surveyQbudget").val(),
-            qdate: new Date().getTime()
+            qdate: new Date().getTime(),
         };
 
         $.post(url, user)

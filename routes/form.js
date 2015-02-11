@@ -10,6 +10,7 @@ passport.use('local-login', LocalStrategy.login);
 
 /* Test Post from User Sign Up Form */
 router.post('/register', passport.authenticate('local-register'), function (req, res) {
+    console.log(req.user);
     emailVerification.send(req.user.email);
     createSendToken(req.user, res);
 });
@@ -35,7 +36,7 @@ function createSendToken(user, res) {
 }
 
 /* Returns previous searches made by user */
-router.get('/searches', function(req, res) {
+router.get('/status', function(req, res) {
 
     if(!req.headers.authorization) {
         return res.status(401).send({
@@ -51,8 +52,12 @@ router.get('/searches', function(req, res) {
         });
     }
 
-    res.json({test:'it is a test'});
+    res.status(200).send({
+        payload: 'test'
+    });
 
 });
+
+router.get('/auth/verifyEmail', emailVerification.handler);
 
 module.exports = router;

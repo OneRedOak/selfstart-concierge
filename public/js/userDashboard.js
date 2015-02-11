@@ -2,12 +2,6 @@
 
     window.onload = function(){
 
-        populateRequests(JSON.stringify({
-            query: 'querys',
-            rstatus: 'rstatus',
-            rlink: 'rlink'
-        }));
-
         updatePageAuthStatus();
 
         $('#sidebarSignout').click(userLogOut);
@@ -92,6 +86,23 @@
         $('#loginForm').show();
     };
 
+    /* Returns user's auth status & previous searches */
+    var getUserStatus = function() {
+
+        $.ajax({
+            url: 'http://localhost:3000/form/status',
+            type: 'GET',
+            headers: {
+                authorization: 'Bearer ' + authTokenHandler().getToken()
+            }
+        }).done(function(res) {
+            console.log(res.payload);
+            return res.payload;
+        }).fail(function(err) {
+            console.log('Searches did not load');
+        });
+    };
+
     /* Show or hide content based on authentication status */
     var updatePageAuthStatus = function() {
 
@@ -105,24 +116,20 @@
             $('#sidebarCreate').show();
             $('#sidebarSignout').show();
 
-            /* Hide */
-            var prevSearches = getPrevUserSearches();
+            var prevSearches = getUserStatus();
 
-            console.log(prevSearches);
-        }
-    };
+            /* Populate previous user search requests */
+            populateRequests(JSON.stringify({
+                query: 'querys',
+                rstatus: 'rstatus',
+                rlink: 'rlink'
+            }));
 
-    var getPrevUserSearches = function() {
-
-        $.ajax({
-            url: 'http://localhost:3000/form/searches',
-            type: 'GET',
-            headers: {
-                authorization: 'Bearer ' + authTokenHandler().getToken()
+            if ( /* email validated */ false) {
+                $('#confirmAlert').hide();
             }
-        }).done(function(res) {
-            return res;
-        });
+
+        }
     };
 
     var submitUserLogin = function() {
@@ -141,6 +148,6 @@
             .fail(function(err) {
                 alert('Opps! Something went wrong logging in.', err.message);
             });
-    }
+    };
 
 })();

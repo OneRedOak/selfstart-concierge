@@ -51,30 +51,52 @@ exports.register = new LocalStrategy(strategyOptions, function(req, email, passw
             return done(err);
         }
 
+        /* If user exists, request to queries array */
         if (user) {
-            return done(null, false, {message: 'Email already exists'});
+            user.queries.push({
+                    query: user.query,
+                    qlearn: user.qlearn,
+                    qwhy: user.qwhy,
+                    qbackground: user.qbackground,
+                    qformat: user.qformat,
+                    qbudget: user.qbudget,
+                    qdate: new Date().getTime(),
+                    rlink: null,
+                    rstatus: false
+            });
+
+            user.save(function (err) {
+                done(null, user);
+            });
+
+        } else {
+
+            // return done(null, false, {message: 'Email already exists'});
+            var user = req.body;
+
+            /* If user doesn't exist, create user object with pre populated array */
+            var newUser = new User({
+                fullname: user.fullname,
+                email: user.email,
+                password: "selfstart",
+                queries: [{
+                    query: user.query,
+                    qlearn: user.qlearn,
+                    qwhy: user.qwhy,
+                    qbackground: user.qbackground,
+                    qformat: user.qformat,
+                    qbudget: user.qbudget,
+                    qdate: new Date().getTime(),
+                    rlink: null,
+                    rstatus: false
+                }],
+                registered: false
+            });
+
+            newUser.save(function (err) {
+                done(null, newUser);
+            });
         }
-
-        var user = req.body;
-
-        var newUser = new User({
-            fullname: user.fullname,
-            email: user.email,
-            password: "selfstart",
-            query: user.query,
-            qlearn: user.qlearn,
-            qwhy: user.qwhy,
-            qbackground: user.qbackground,
-            qformat: user.qformat,
-            qbudget: user.qbudget,
-            qdate: new Date().getTime(),
-            rlink: null,
-            rstatus: null
-        });
-
-        newUser.save(function (err) {
-            done(null, newUser);
-        });
 
     });
 });
