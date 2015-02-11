@@ -71,8 +71,12 @@
 		}
 
 		$("#submitSurvey").click(function(){
-			blur();
-            submitFormPost(); // POSTs form to backend route
+            if(validateEmail($("#surveyEmail").val())){
+    			blur();
+                submitFormPost(); // POSTs form to backend route
+            } else {
+                alert("Please enter valid Email");
+            }
 		});
 
 		$('#closeModal').click(function(){
@@ -83,13 +87,22 @@
            var key = e.which;
            if(key == 13)  // the enter key code
             {
-              $('#blurModal').modal('show');
-              blur();
-              submitFormPost();
+                if(validateEmail($("#surveyEmail").val())){
+                    $('#blurModal').modal('show');
+                    blur();
+                    submitFormPost();
+                } else {
+                    alert("Please enter valid Email");
+                } 
             }
           });
 
 	}
+
+    function validateEmail(email) { 
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
 
 	function typeWriter(text, n) {
 	  if (n < (text.length)) {
