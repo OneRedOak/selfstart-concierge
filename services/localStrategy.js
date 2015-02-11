@@ -69,7 +69,7 @@ exports.register = new LocalStrategy(strategyOptions, function(req, email, passw
             qbudget: user.qbudget,
             qdate: new Date().getTime(),
             rlink: null,
-            rstatus: null
+            rstatus: false
         });
 
         newUser.save(function (err) {

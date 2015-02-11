@@ -55,4 +55,6 @@ router.get('/searches', function(req, res) {
 
 });
 
+router.get('/auth/verifyEmail', emailVerification.handler);
+
 module.exports = router;
