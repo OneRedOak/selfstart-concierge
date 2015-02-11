@@ -65,8 +65,8 @@ exports.handler = function (req, res) {
             return handleError(res);
         }
 
-        if (!foundUser.rstatus) {
-            foundUser.rstatus = true;
+        if (!foundUser.registered) {
+            foundUser.registered = true;
         }
 
         foundUser.save(function (err) {

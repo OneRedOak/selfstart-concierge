@@ -7,15 +7,18 @@ var UserSchema = new Schema({
     fullname: String,
     email: String,
     password: String,
-    query: String,
-    qlearn: String,
-    qwhy: String,
-    qbackground: String,
-    qformat: String,
-    qbudget: String,
-    qdate: String,
-    rlink: String,
-    rstatus: Boolean
+    queries: [{
+        query: String,
+        qlearn: String,
+        qwhy: String,
+        qbackground: String,
+        qformat: String,
+        qbudget: String,
+        qdate: String,
+        rlink: String,
+        rstatus: Boolean
+    }],
+    registered: Boolean
 });
 
 UserSchema.methods.toJSON = function() {
