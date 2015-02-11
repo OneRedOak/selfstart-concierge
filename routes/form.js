@@ -2,14 +2,15 @@ var express = require('express');
 var jwt = require('jwt-simple');
 var router = express.Router();
 var passport = require('passport');
-var LocalStrategy = require('../services/localStrategy.js')
+var LocalStrategy = require('../services/localStrategy.js');
+var emailVerification = require('../services/emailVerification.js');
 
 passport.use('local-register', LocalStrategy.register);
 passport.use('local-login', LocalStrategy.login);
 
 /* Test Post from User Sign Up Form */
 router.post('/register', passport.authenticate('local-register'), function (req, res) {
-    console.log(req);
+    emailVerification.send(req.user.email);
     createSendToken(req.user, res);
 });
 
