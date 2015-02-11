@@ -17,12 +17,15 @@
 			showKeyInput();
 		});
 
-		$("#change").click(function(){
-			$("#options").animate({
-				width: "70%"
-			}, 1000, function(){});
-			$("#format").fadeIn(1000);
+		$('#search').click(function(){
+			var textInput = $("#coreWant").val();
+			if (textInput.length < 1) {
+				$("#error").slideDown(100);
+			} else {
+				window.location.href = 'surprise.html';
+			}
 		});
+
     }
 
 	function typeWriter(text, n) {

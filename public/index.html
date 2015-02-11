@@ -26,13 +26,20 @@
 <body>
 
     <div id="topSection">
-        <div id="logoSection">
-            <img src="img/logo3.png" class="img-responsive" style="height: 35px;">
+        <div id="nav">
+            <nav class="navbar navbar-default">
+              <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="index.html"><img src="img/logo3.png" style="height: 30px; margin-top: 10px;"></a>
+              </div><!-- /.container-fluid -->
+            </nav>
         </div>
         <div id="searchSection">
             <div class="tagline">
                 <p class="topdescribe">find online learning resources<span id="speaker"></span><span id="suchAs"></span></p>
             </div>
+            <div id="error">* Please tell us what you want to learn</div>
             <textarea id="coreWant" rows="1" placeholder="what do you want to learn?" autofocus></textarea>
             <div id="typeWriter">
                 <span id="changing"></span>
@@ -66,9 +73,7 @@
             </div>
         </div>
         <div id="input">
-            <form action="surprise.html">
-                <button id="search" type="submit">SEARCH</button>
-            </form>
+            <button id="search" type="submit">SEARCH</button>
         </div>
         
     </div>

@@ -47,10 +47,16 @@ h2 {
     width: 33.33333333%;
 }
 
-#confirmAlert {
-    background-color: red;
-    height: 50px;
-    width: 100%;
+#error {
+    color: red;
+    font-size: 13pt;
+    padding-bottom: 5px;
+}
+
+.navbar-default {
+    background-color: white;
+    border: white;
+    margin-bottom: 9%;
 }
 
 .marginRight {
@@ -122,10 +128,12 @@ select {
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 4px;
-    border: #95a5a6 solid 1px;
-    background-color: #ecf0f1;
+    border: #3498db solid 1px;
+    background-color: white;
     font-weight: 200;
-    color: black
+    color: #3498db;
+    font-size: 14pt;
+    letter-spacing: 2px;
 }
 
 #search:hover {
@@ -177,7 +185,7 @@ select {
 	height: 100%;
 }
 
-.topdescribe2, #coreWant, #input, .learnmore, #options {
+.topdescribe2, #coreWant, #input, .learnmore, #options, #error {
 	display: none;
 }
 

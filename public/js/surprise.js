@@ -74,6 +74,7 @@
             if(validateEmail($("#surveyEmail").val())){
     			blur();
                 submitFormPost(); // POSTs form to backend route
+
             } else {
                 alert("Please enter valid Email");
             }
@@ -154,6 +155,7 @@
             .done(function(res) {
                 alert('Successful register!');
                 authTokenHandler().setToken(res.token);
+                window.location.href = 'dashboard.html';
             })
             .fail(function() {
                 alert('Opps! Something went wrong registering.', 'Please try again.');
