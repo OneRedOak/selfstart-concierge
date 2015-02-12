@@ -26,6 +26,11 @@
         /* Show or hide content based on users authentication status */
         updatePageAuthStatus();
 
+        $('#surveyQuery').val(getParameterByName('search'));
+        $('#surveyQbackground').val(getParameterByName('bg'));
+        $('#surveyQformat').val(getParameterByName('pformat'));
+        $('#surveyQbudget').val(getParameterByName('spend'));
+
         $('#feedbackSubmit').click(submitFeedbackForm);
 
     	$('#actionButton').click(function(){
@@ -194,5 +199,13 @@
         }
 
     };
+
+    /* Receive & decode query string parameters */
+    var getParameterByName = function(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
 
 })();

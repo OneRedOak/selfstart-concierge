@@ -1,14 +1,17 @@
 var express = require('express');
 var router = express.Router();
+var url = require('url');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.sendfile('./public/index.html');
 });
 
-/* GET Hello World page. */
-router.get('/index', function(req, res) {
-    res.render('index', { title: 'Welcome to the SelfStart Dashboard' })
+/* GET surprise page, pass along query string parameters. */
+router.get('/surprise', function(req, res) {
+    // var queryObject = url.parse(req.url, true).query;
+    console.log(url.parse(req.url, true));
+    res.sendFile('./public/surprise.html' + req.url.search);
 });
 
 /* GET Userlist page. */

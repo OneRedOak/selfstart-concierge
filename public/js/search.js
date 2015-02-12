@@ -51,15 +51,18 @@
 		});
 
 		$('#search').click(function(){
+            var bg = $('#selectBackKnow').val();
+            var pformat = $('#selectFormat').val();
+            var spend = $('#selectSpend').val();
 			var textInput = $("#coreWant").val();
 			if (textInput.length < 1) {
 				$("#error").slideDown(100);
 			} else {
-				window.location.href = 'surprise.html';
+				window.location.href = 'surprise.html?search=' + textInput + '&bg=' + bg + '&pformat=' + pformat + '&spend=' + spend;
 			}
 		});
 
-    }
+    };
 
 	function typeWriter(text, n) {
 	  if (n < (text.length)) {
