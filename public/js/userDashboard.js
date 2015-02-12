@@ -18,8 +18,7 @@
         $("#content").css("height", window.innerHeight);
     };
 
-    function populateRequests(data){
-        var targetRequest = JSON.parse(data);
+    function populateRequests(targetRequest){
         createRequest(targetRequest.query, targetRequest.rstatus, targetRequest.rlink);
     };
 
@@ -47,7 +46,13 @@
         status.innerHTML = "Status :";
         var currentStatus = document.createElement("span");
         currentStatus.className += " currentStatus";
-        currentStatus.innerHTML = " Ready";
+        var statusText = '';
+        if (requestStatus) {
+            statusText = ' Ready';
+        } else {
+            statusText = ' In Process';
+        }
+        currentStatus.innerHTML = statusText;
         status.appendChild(currentStatus);
 
         attribute.appendChild(status); // Puts status into attribute
@@ -67,7 +72,7 @@
             attribute.appendChild(link); // Puts link + button in attribute
         } else {
             readyButton.className += " pending";
-            attribute.appendChild(readyButton); // Puts buttin in attribute
+            attribute.appendChild(readyButton); // Puts button in attribute
         }
 
         container.appendChild(attribute); // Puts attribute in results container
@@ -86,23 +91,6 @@
         $('#loginForm').show();
     };
 
-    /* Returns user's auth status & previous searches */
-    var getUserStatus = function() {
-
-        $.ajax({
-            url: 'http://localhost:3000/form/status',
-            type: 'GET',
-            headers: {
-                authorization: 'Bearer ' + authTokenHandler().getToken()
-            }
-        }).done(function(res) {
-            console.log(res.payload);
-            return res.payload;
-        }).fail(function(err) {
-            console.log('Searches did not load');
-        });
-    };
-
     /* Show or hide content based on authentication status */
     var updatePageAuthStatus = function() {
 
@@ -116,18 +104,33 @@
             $('#sidebarCreate').show();
             $('#sidebarSignout').show();
 
-            var prevSearches = getUserStatus();
+            /* Returns user's auth status & previous searches */
+            $.ajax({
+                url: 'http://localhost:3000/form/status',
+                type: 'GET',
+                headers: {
+                    authorization: 'Bearer ' + authTokenHandler().getToken()
+                }
+            }).done(function(res) {
 
-            /* Populate previous user search requests */
-            populateRequests(JSON.stringify({
-                query: 'querys',
-                rstatus: 'rstatus',
-                rlink: 'rlink'
-            }));
+                res.queries.forEach(function(query) {
 
-            if ( /* email validated */ false) {
-                $('#confirmAlert').hide();
-            }
+                    /* Populate previous user search requests */
+                    populateRequests({
+                        query: query.query,
+                        rstatus: query.rstatus,
+                        rlink: query.rlink
+                    });
+                });
+
+                /* If user has validated email address, hide email validation reminder */
+                if (res.registered) {
+                    $('#confirmAlert').hide();
+                }
+
+            }).fail(function(err) {
+                console.log('Searches did not load');
+            });
 
         }
     };

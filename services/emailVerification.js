@@ -93,6 +93,8 @@ function getHtml(token) {
 
     model.verifyUrl += token;
 
+    console.log('MODEL.VERIFYURL: ', model.verifyUrl);
+
     return template(model);
 }
 

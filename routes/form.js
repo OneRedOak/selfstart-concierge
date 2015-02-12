@@ -4,14 +4,22 @@ var router = express.Router();
 var passport = require('passport');
 var LocalStrategy = require('../services/localStrategy.js');
 var emailVerification = require('../services/emailVerification.js');
+var User = require('../models/user');
+var FeedbackForm = require('../models/feedbackForm.js');
+var config = require('../services/config.js');
 
 passport.use('local-register', LocalStrategy.register);
 passport.use('local-login', LocalStrategy.login);
 
 /* Test Post from User Sign Up Form */
 router.post('/register', passport.authenticate('local-register'), function (req, res) {
-    console.log(req.user);
-    emailVerification.send(req.user.email);
+
+    /* If user just registered (only one request in queries array) send verification email */
+    console.log(req.user.queries.length);
+    if (req.user.queries.length <= 1) {
+        emailVerification.send(req.user.email);
+    }
+
     createSendToken(req.user, res);
 });
 
@@ -26,7 +34,7 @@ function createSendToken(user, res) {
         sub: user.id
     };
 
-    var token = jwt.encode(payload, "tempSecretKey");
+    var token = jwt.encode(payload, config.EMAIL_SECRET);
 
     res.status(200).send({
         user: user.toJSON(),
@@ -44,7 +52,7 @@ router.get('/status', function(req, res) {
         });
     }
     var token = req.headers.authorization.split(' ')[1];
-    var payload = jwt.decode(token, "tempSecretKey");
+    var payload = jwt.decode(token, config.EMAIL_SECRET);
 
     if (!payload.sub) {
         res.status(401).send({
@@ -52,12 +60,42 @@ router.get('/status', function(req, res) {
         });
     }
 
-    res.status(200).send({
-        payload: 'test'
+    User.findOne({_id: payload.sub}, function(err, user) {
+        if (err) {
+            console.log(err);
+        }
+
+        /* If user exists, request to queries array */
+        if (user) {
+
+            res.status(200).send({
+                queries: user.queries,
+                registered: user.registered
+            });
+        }
     });
 
 });
 
 router.get('/auth/verifyEmail', emailVerification.handler);
+
+router.post('/feedback', function(req, res) {
+
+    console.log(req.body.message);
+
+    var feedbackFormEntry = new FeedbackForm({
+        'message': req.body.message,
+        'date': new Date().getTime(),
+        'userid': ''
+    });
+
+    feedbackFormEntry.save(function (err) {
+        console.log('Feedback saved');
+        res.status(200).send({
+            message: 'Feedback saved'
+        });
+    });
+
+});
 
 module.exports = router;

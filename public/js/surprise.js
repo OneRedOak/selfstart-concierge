@@ -23,6 +23,8 @@
 
     	setChevron();
 
+        $('#feedbackSubmit').click(submitFeedbackForm);
+
     	$('#actionButton').click(function(){
     		$('#start').ScrollTo();
     	});
@@ -110,7 +112,7 @@
                 // submit feedback into database
             }
         });
-	}
+	};
 
     function validateEmail(email) { 
         var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -134,18 +136,6 @@
 		$('#triangle-down').css('border-right', border);
 	}
 
-	function blur(){
-		$('#survey').css("-webkit-filter", "blur(7px)");
-		$('#continue').css("-webkit-filter", "blur(7px)");
-        $('#footer').css("-webkit-filter", "blur(7px)");
-	}
-
-	function unblur(){
-		$('#survey').css("-webkit-filter", "none");
-		$('#continue').css("-webkit-filter", "none");
-        $('#footer').css("-webkit-filter", "none");
-	}
-
     /* Submission Form JS Wiring to POST to BackEnd */
 
     var submitFormPost = function() {
@@ -160,7 +150,7 @@
             qbackground: $("#surveyQbackground").val(),
             qformat: $("#surveyQformat").val(),
             qbudget: $("#surveyQbudget").val(),
-            qdate: new Date().getTime(),
+            qdate: new Date().getTime()
         };
 
         $.post(url, user)
@@ -173,5 +163,21 @@
                 alert('Opps! Something went wrong registering.', 'Please try again.');
             });
     }
+
+    var submitFeedbackForm = function() {
+        var url = 'http://localhost:3000/form/feedback';
+        var data = {
+            message: $("#feedbackForm").val()
+        };
+
+        $.post(url, data)
+            .done(function(res) {
+                alert('Feedback submitted - thanks!');
+                $('#feedbackForm').val('');
+            })
+            .fail(function(err) {
+                alert('Opps! Something went wrong submitting your feedback.', err.message);
+            });
+    };
 
 })();
