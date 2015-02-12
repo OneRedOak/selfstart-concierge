@@ -48,6 +48,7 @@
 
 		$('#typeWriter').click(function(){
 			showKeyInput();
+			skipAnimation();
 		});
 
 		$('#search').click(function(){
@@ -63,6 +64,12 @@
 		});
 
     };
+
+    function skipAnimation(){
+    	$("#coreWant").css("display", "initial");
+    	$("#speaker").html("specific to you ");
+    	$("#suchAs").html("such as");
+    }
 
 	function typeWriter(text, n) {
 	  if (n < (text.length)) {
