@@ -19,19 +19,31 @@
 		});
 
 		document.getElementById("coreWant").onkeyup=function() {
-			alert("Handler for .change() called.");
+			if (!ifTyped) {
+				ga('send', 'event', 'textInput', 'typed', 'Search', 1);
+				ifTyped = true;
+			}
 		};
 
 		$("#backKnow").click(function(){
-			alert("back know");
+			if (!ifBack) {
+				ga('send', 'event', 'dropdown', 'click', 'BackKnowDropdownClick', 1);
+				ifBack = true;
+			}
 		});
 
 		$("#format").click(function(){
-			alert("format");
+			if (!ifFormat) {
+				ga('send', 'event', 'dropdown', 'click', 'FormatDropdownClick', 1);
+				ifFormat = true;
+			}
 		});
 
 		$("#spend").click(function(){
-			alert("spending");
+			if (!ifPay) {
+				ga('send', 'event', 'dropdown', 'click', 'SpendDropwdownClick', 1);
+				ifPay = true;
+			}
 		});
 
 		$('#typeWriter').click(function(){
