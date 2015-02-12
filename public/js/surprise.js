@@ -23,6 +23,9 @@
 
     	setChevron();
 
+        /* Show or hide content based on users authentication status */
+        updatePageAuthStatus();
+
         $('#feedbackSubmit').click(submitFeedbackForm);
 
     	$('#actionButton').click(function(){
@@ -162,8 +165,9 @@
             .fail(function() {
                 alert('Opps! Something went wrong registering.', 'Please try again.');
             });
-    }
+    };
 
+    /* Submits data from feedback form to /form/feedback route to be saved in DB */
     var submitFeedbackForm = function() {
         var url = 'http://localhost:3000/form/feedback';
         var data = {
@@ -178,6 +182,17 @@
             .fail(function(err) {
                 alert('Opps! Something went wrong submitting your feedback.', err.message);
             });
+    };
+
+    /* Show or hide content based on authentication status */
+    var updatePageAuthStatus = function() {
+
+        var isAuth = authTokenHandler().isAuthenticated();
+
+        if(isAuth) {
+            $('#signupFormUserCredentials').hide();
+        }
+
     };
 
 })();
