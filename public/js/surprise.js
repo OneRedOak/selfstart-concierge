@@ -46,6 +46,7 @@
 
         $('#learnYouButton').click(function(){
             $('#learnYou').slideDown();
+            ga('send', 'event', 'button', 'click', 'LearnMore_1', 1);
         });
 
         $('#learnMagicButton').click(function(){
@@ -123,7 +124,7 @@
 	    setTimeout(function() {
 	      typeWriter(text, n)
 	    }, 100);
-	  }
+	  }git
 	}
 
 	function setChevron(){
