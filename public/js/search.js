@@ -41,7 +41,7 @@
 
 		$("#spend").click(function(){
 			if (!ifPay) {
-				ga('send', 'event', 'dropdown', 'click', 'SpendDropwdownClick', 1);
+				ga('send', 'event', 'dropdown', 'click', 'SpendDropdownClick', 1);
 				ifPay = true;
 			}
 		});
