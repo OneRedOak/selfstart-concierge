@@ -74,6 +74,7 @@ body {
 #footer textarea {
     border-radius: 3px;
     height: 80px;
+    color: black;
 }
 
 #footerLinks a {
