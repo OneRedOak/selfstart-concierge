@@ -23,6 +23,8 @@
 
     	setChevron();
 
+        $('#feedbackSubmit').click(submitFeedbackForm);
+
     	$('#actionButton').click(function(){
     		$('#start').ScrollTo();
     	});
@@ -160,5 +162,21 @@
                 alert('Opps! Something went wrong registering.', 'Please try again.');
             });
     }
+
+    var submitFeedbackForm = function() {
+        var url = 'http://localhost:3000/form/feedback';
+        var data = {
+            message: $("#feedbackForm").val()
+        };
+
+        $.post(url, data)
+            .done(function(res) {
+                alert('Feedback submitted - thanks!');
+                $('#feedbackForm').val('');
+            })
+            .fail(function(err) {
+                alert('Opps! Something went wrong submitting your feedback.', err.message);
+            });
+    };
 
 })();

@@ -5,6 +5,7 @@ var passport = require('passport');
 var LocalStrategy = require('../services/localStrategy.js');
 var emailVerification = require('../services/emailVerification.js');
 var User = require('../models/user');
+var FeedbackForm = require('../models/feedbackForm.js');
 var config = require('../services/config.js');
 
 passport.use('local-register', LocalStrategy.register);
@@ -77,5 +78,24 @@ router.get('/status', function(req, res) {
 });
 
 router.get('/auth/verifyEmail', emailVerification.handler);
+
+router.post('/feedback', function(req, res) {
+
+    console.log(req.body.message);
+
+    var feedbackFormEntry = new FeedbackForm({
+        'message': req.body.message,
+        'date': new Date().getTime(),
+        'userid': ''
+    });
+
+    feedbackFormEntry.save(function (err) {
+        console.log('Feedback saved');
+        res.status(200).send({
+            message: 'Feedback saved'
+        });
+    });
+
+});
 
 module.exports = router;

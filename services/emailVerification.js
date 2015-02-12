@@ -50,15 +50,9 @@ exports.send = function(email) {
 exports.handler = function (req, res) {
     var token = req.query.token;
 
-    console.log('TOKEN: ', req.query.token);
-
     var payload = jwt.decode(token, config.EMAIL_SECRET);
 
-    console.log('PAYLOAD: ', payload);
-
     var email = payload.sub;
-
-    console.log('EMAIL: ', email);
 
     if (!email) return handleError(res);
 
