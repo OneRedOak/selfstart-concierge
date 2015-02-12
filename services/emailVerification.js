@@ -8,7 +8,7 @@ var config = require('./config.js');
 var User = require('../models/user.js');
 
 var model = {
-    verifyUrl: 'http://localhost:3000/form/auth/verifyEmail?token=',
+    verifyUrl: 'http://tryselfstart.com/form/auth/verifyEmail?token=',
     title: 'SelfStart',
     subTitle: 'Thanks for verifying!',
     body: 'Please verify your email address by clicking the button below.'

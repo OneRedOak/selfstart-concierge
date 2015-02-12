@@ -108,7 +108,7 @@
 
             /* Returns user's auth status & previous searches */
             $.ajax({
-                url: 'http://localhost:3000/form/status',
+                url: '/form/status',
                 type: 'GET',
                 headers: {
                     authorization: 'Bearer ' + authTokenHandler().getToken()
@@ -138,7 +138,7 @@
     };
 
     var submitUserLogin = function() {
-        var url = 'http://localhost:3000/form/login';
+        var url = '/form/login';
         var user = {
             email: $("#loginFormEmail").val(),
             password: $("#loginFormPassword").val()
