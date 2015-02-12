@@ -2,6 +2,11 @@
 
 	var showingOptions = false;
 
+	var ifTyped = false;
+	var ifBack = false;
+	var ifFormat = false;
+	var ifPay = false;
+
     window.onload = function(){
     	topWriter();
 
@@ -11,6 +16,22 @@
 			{
 		    	return false;	
 			}
+		});
+
+		document.getElementById("coreWant").onkeyup=function() {
+			alert("Handler for .change() called.");
+		};
+
+		$("#backKnow").click(function(){
+			alert("back know");
+		});
+
+		$("#format").click(function(){
+			alert("format");
+		});
+
+		$("#spend").click(function(){
+			alert("spending");
 		});
 
 		$('#typeWriter').click(function(){
