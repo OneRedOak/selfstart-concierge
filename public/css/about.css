@@ -108,6 +108,33 @@ body {
     text-align: left;
 }
 
+#mc_embed_signup{
+    clear:left;
+}
+
+#mc_embed_signup input {
+    border none;
+    padding: 5px;
+}
+
+#mc-embedded-subscribe {
+    text-align: right;
+    margin-top: 20px;
+    background-color: transparent;
+    color: white;
+    padding-left: 19px;
+    padding-right: 19px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    outline: none;
+    border: white 1px solid;
+}
+
+#mc-embedded-subscribe:hover {
+    background-color: white;
+    color: #2c3e50;
+}
+
 /* END Footer Related */
 
 h3 {
