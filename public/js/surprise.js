@@ -147,7 +147,7 @@
     /* Submission Form JS Wiring to POST to BackEnd */
 
     var submitFormPost = function() {
-        var url = 'http://localhost:3000/form/register';
+        var url = '/form/register';
         var user = {
             fullname: $("#surveyFullName").val(),
             email: $("#surveyEmail").val(),
@@ -174,7 +174,7 @@
 
     /* Submits data from feedback form to /form/feedback route to be saved in DB */
     var submitFeedbackForm = function() {
-        var url = 'http://localhost:3000/form/feedback';
+        var url = '/form/feedback';
         var data = {
             message: $("#feedbackForm").val()
         };
