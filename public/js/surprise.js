@@ -169,6 +169,7 @@
             })
             .fail(function() {
                 alert('Opps! Something went wrong registering.', 'Please try again.');
+                return false;
             });
     };
 
