@@ -16,6 +16,8 @@
           });
 
         $("#content").css("height", window.innerHeight);
+
+        createRequest("hello", "true", "");
     };
 
     function populateRequests(targetRequest){
